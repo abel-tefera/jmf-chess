@@ -1,0 +1,69 @@
+$c-primary: #ec5242;
+$c-secondary: #272a31;
+$c-background: #d3d3d3;
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: $c-background;
+}
+
+.heading {
+  color: $c-primary;
+}
+
+.heading-sub {
+  font-weight: 600;
+  background-color: #f3ec78;
+  background-image: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(203, 100, 92, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.sub-heading {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #fff;
+}
+
+.card-img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.content {
+  background-color: $c-secondary;
+}
+
+.card-title {
+  color: $c-primary;
+}
+
+.card-subtitle {
+  color: #fff;
+  text-align: center
+}
+
+.featured-img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.featured-title {
+  font-weight: 600;
+}
+
+.featured-sub {
+  color: $c-primary;
+}
+
+.featured-desc {
+
+}
