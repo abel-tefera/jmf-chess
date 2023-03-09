@@ -1,10 +1,11 @@
 $c-primary: #ec5242;
+$c-primary-bright: #ff432f;
 $c-secondary: #272a31;
 $c-background: #d3d3d3;
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: $c-background;
+  // background-color: $c-background;
 }
 
 .heading {
@@ -30,30 +31,53 @@ body {
 .sub-heading {
   margin: 1rem;
   padding: 1rem;
-  border: 1px solid #fff;
+  border: 1px solid $c-background;
 }
 
 .card-img {
-  width: 5rem;
-  height: 5rem;
-}
-
-.content {
-  background-color: $c-secondary;
+  width: 3rem;
+  height: 3rem;
 }
 
 .card-title {
-  color: $c-primary;
+  color: $c-primary-bright;
 }
 
 .card-subtitle {
-  color: #fff;
-  text-align: center
+  color: $c-background;
+  text-align: center;
+}
+
+.content {
+  background: url("assets/bg.png");
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
 }
 
 .featured-img {
-  width: 10rem;
-  height: 10rem;
+  max-width: 10rem;
+  max-height: 10rem;
+  padding: 1rem 0;
+  object-fit: cover;
+}
+
+.featured-img-col:before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: -1rem;
+  width: 4rem;
+  height: 4rem;
+  z-index: -1;
+  background: repeating-conic-gradient($c-background 0% 25%, transparent 0% 50%)
+    50% / 0.8rem 0.8rem;
+}
+
+.featured-content > hr {
+  width: 15%;
+  color: $c-background;
+  border-bottom: 0.15rem solid $c-background;
 }
 
 .featured-title {
@@ -65,5 +89,10 @@ body {
 }
 
 .featured-desc {
+  font-size: 1rem;
+}
 
+.content-card {
+  background-color: $c-secondary;
+  opacity: 0.75;
 }
