@@ -19,6 +19,40 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <nav class="navbar navbar-light bg-light navbar-expand-md">
+      <div class="container-fluid">
+        <a class="navbar-brand ps-md-5 ms-md-5"
+          ><img class="logo" src="assets/apple-seeklogo.com.svg"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="custom-nav collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav me-lg-5 pe-md-5">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Program</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Join</a>
+            </li>
+          </ul>
+          <div class="ms-lg-5 ps-md-5">
+            <p class="navbar-right-btn p-3">CC Campain</p>
+          </div>
+        </div>
+      </div>
+    </nav>
     <section class="mt-5 mb-5">
       <div class="container-md mt-5 mb-5">
         <h1 class="h1 heading">"Hello! Sharing world"</h1>
@@ -244,18 +278,23 @@
     <section class="partner">
       <div class="container-md d-flex flex-column">
         <h1 class="align-self-center mt-5 mb-2">Partner</h1>
-        <hr class="align-self-center"/>
-        <div class="d-flex flex-row partner-imgs align-items-center">
+        <hr class="align-self-center" />
+        <div
+          class="d-flex flex-row partner-imgs align-items-center align-self-center"
+        >
           <div class="featured-flex">
             <img src="assets/mozilla.svg" />
           </div>
           <div class="featured-flex">
             <img src="assets/google.svg" />
-          </div><div class="featured-flex">
+          </div>
+          <div class="featured-flex">
             <img src="assets/mozilla.svg" />
-          </div><div class="featured-flex">
+          </div>
+          <div class="featured-flex">
             <img src="assets/google.svg" />
-          </div><div class="featured-flex">
+          </div>
+          <div class="featured-flex">
             <img src="assets/mozilla.svg" />
           </div>
           <!-- <img src="assets/google.svg" />
@@ -265,6 +304,23 @@
         </div>
       </div>
     </section>
+    <footer>
+      <div class="container-fluid">
+        <div class="w-75 d-flex flex-row py-5 mx-auto">
+          <div class="footer-logo align-self-center">
+            <img src="assets/google.svg" />
+          </div>
+          <div class="footer-content d-flex flex-column ps-4">
+            <p class="fs-4">Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="fs-6">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa,
+              magnam est voluptatibus sequi accusantium excepturi suscipit
+              aliquid a!
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
