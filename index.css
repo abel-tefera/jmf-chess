@@ -6,6 +6,10 @@ body {
   color: #ec5242;
 }
 
+.logo {
+  width: 2.65rem;
+}
+
 .heading-sub {
   font-weight: 600;
   background-color: #f3ec78;
@@ -101,10 +105,15 @@ body {
 .partner-imgs {
   flex-wrap: wrap;
   text-align: center;
+  width: 100%;
 }
 
 .partner-imgs img {
   aspect-ratio: 1/1;
+}
+
+.navbar-right-btn {
+  border: 5px solid #ec5242;
 }
 
 @media only screen and (min-width: 768px) {
@@ -116,6 +125,15 @@ body {
   }
   .featured-flex {
     flex: 20%;
+  }
+  .custom-nav {
+    flex-basis: content !important;
+    justify-content: end;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .partner-imgs {
+    width: 75%;
   }
 }
 
