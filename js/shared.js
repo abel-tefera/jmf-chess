@@ -3,7 +3,7 @@ export class header extends HTMLElement {
     this.innerHTML = `<nav class="navbar navbar-light bg-light navbar-expand-md">
       <div class="container-fluid">
       <a class="navbar-brand ps-md-5 ms-md-5"
-        ><img class="logo" src="assets/apple-seeklogo.com.svg"
+        ><img class="logo" src="assets/apple.svg"
       /></a>
       <button
         class="navbar-toggler"
@@ -70,8 +70,11 @@ export const createHeader = () => {
   document.body.insertAdjacentElement("afterbegin", header);
 };
 
-export const createFooter = () => {
+export const createFooter = (bg) => {
   const footer = document.createElement("footer");
+  if (bg){
+    footer.classList.add('footer-dark', 'text-white')
+  }
   footer.innerHTML = `<custom-footer></custom-footer>`;
   document.body.insertAdjacentElement("beforeend", footer);
 };
