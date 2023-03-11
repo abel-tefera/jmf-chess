@@ -92,12 +92,6 @@ body {
   background-color: #d3d3d3;
 }
 
-.partner hr {
-  width: 10%;
-  color: #ff432f;
-  border-bottom: 0.15rem solid #ff432f;
-}
-
 .featured-flex {
   flex: 30%;
 }
@@ -114,6 +108,35 @@ body {
 
 .navbar-right-btn {
   border: 5px solid #ec5242;
+}
+
+.about-header {
+  color: #ec5242;
+}
+
+.about-logo {
+  border: 1px solid #d3d3d3;
+  width: 50%;
+}
+
+.about-section-hr {
+  width: 95vw;
+  color: #d3d3d3;
+  border-bottom: 0.15rem solid #d3d3d3;
+}
+
+.red-hr {
+  width: 10%;
+  color: #ff432f;
+  border-bottom: 0.15rem solid #ff432f;
+}
+
+.past-event-divs {
+  background-color: #ec5242;
+}
+
+.footer-dark {
+  background-color: #272a31;
 }
 
 @media only screen and (min-width: 768px) {
