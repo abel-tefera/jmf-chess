@@ -104,13 +104,13 @@ class featuredCard extends HTMLElement {
       this.attributes;
 
     this.innerHTML = `<div
-      class="row position-relative d-flex justify-content-between mx-2"
+      class="row position-relative justify-content-between mx-2"
     >
       <div class="col-6 featured-img-col p-0">
         <img class="featured-img p-0" src="${featuredImgSrc.value}" />
       </div>
       <div class="col-6 px-0 ps-3">
-        <div class="d-flex flex-column featured-content">
+        <div class="flex-column featured-content">
           <h3 class="featured-title mt-2 mt-lg-0">${featuredName.value}</h3>
           <h6 class="featured-sub h6">${featuredSub.value}</h6>
           <hr class="my-2" />
@@ -129,7 +129,12 @@ customElements.define("featured-card", featuredCard);
 // customElements.define("custom-footer", footer);
 
 const main = () => {
-  createHeader();
+  createHeader([
+    'about',
+    'program',
+    'speakers',
+    'partner'
+  ]);
   createFooter();
   for (const [i, program] of programData.entries()) {
     const { title, imgSrc, description } = program;
