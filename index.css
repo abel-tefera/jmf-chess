@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Lato", sans-serif;
 }
@@ -12,8 +16,8 @@ body {
 
 .heading-sub {
   font-weight: 600;
-  background-color: #f3ec78;
-  background-image: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(203, 100, 92) 35%, rgb(0, 212, 255) 100%);
+  background: rgb(233, 60, 42);
+  background: linear-gradient(90deg, rgb(233, 60, 42) 32%, rgb(212, 7, 7) 45%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
