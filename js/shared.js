@@ -45,13 +45,13 @@ export class header extends HTMLElement {
 export class footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<div class="container-fluid">
-      <div class="w-75 d-flex flex-row py-5 mx-auto justify-content-center">
+      <div class="w-100 d-flex flex-row py-5 mx-auto justify-content-center">
         <div class="footer-logo align-self-center">
           <img src="assets/google.svg" />
         </div>
         <div class="footer-content d-flex flex-column ps-4">
           <p class="fs-4">Lorem ipsum dolor sit amet consectetur.</p>
-          <p class="fs-6">
+          <p class="fs-6 footer-p">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa,
             magnam est voluptatibus sequi accusantium excepturi suscipit
             aliquid a!

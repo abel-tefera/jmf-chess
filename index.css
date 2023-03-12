@@ -76,11 +76,6 @@ body {
   font-size: 1rem;
 }
 
-.content-card {
-  background-color: #272a31;
-  opacity: 0.75;
-}
-
 .featured-img-col:before {
   content: "";
   position: absolute;
@@ -143,6 +138,23 @@ body {
   background-color: #272a31;
 }
 
+.content-card {
+  border-radius: 1.5rem;
+  background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0.9;
+}
+
+.content-card:hover {
+  transform: scale(0.9);
+}
+
+.footer-p {
+  max-width: 30rem;
+}
+
 @media only screen and (min-width: 768px) {
   .card-subtitle {
     text-align: center;
@@ -157,10 +169,16 @@ body {
     flex-basis: content !important;
     justify-content: end;
   }
+  .content-card:hover {
+    transform: scale(1.1);
+  }
 }
 @media only screen and (min-width: 992px) {
   .partner-imgs {
     width: 75%;
+  }
+  .content-card:hover {
+    transform: scale(1.2);
   }
 }
 
