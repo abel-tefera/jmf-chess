@@ -1,7 +1,10 @@
 $c-primary: #ec5242;
+// $c-primary: #658049;
 $c-primary-bright: #ff432f;
+// $c-primary-bright: #769656;
 $c-secondary: #272a31;
 $c-background: #d3d3d3;
+$c-chess-com: #769656;
 
 * {
   scroll-behavior: smooth;
@@ -16,14 +19,39 @@ body {
   color: $c-primary;
 }
 
+.main-bg {
+  position: relative;
+}
+
+.main-bg:before {
+  content: "";
+  position: absolute;
+  height: 120%;
+  width: 100%;
+  top: -3rem;
+  background: url("assets/chess-bg.svg");
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: opacity(0.2);
+  background-position-x: center;
+  overflow-y: hidden;
+}
+
 .logo {
   width: 2.65rem;
 }
 
 .heading-sub {
   font-weight: 600;
-  background: rgb(233,60,42);
-  background: linear-gradient(90deg, rgba(233,60,42,1) 32%, rgba(212,7,7,1) 45%);
+  background: rgb(233, 60, 42);
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(233, 60, 42, 1) 32%,
+  //   rgba(212, 7, 7, 1) 45%
+  // );
+  background: url("assets/abstract.jpg");
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -60,10 +88,10 @@ body {
 
 .featured-img {
   // width: auto;
-  // height: auto;
+  height: fit-content;
   // max-width: 12rem;
   // max-height: 12rem;
-  width: 100%;
+  width: 80%;
   aspect-ratio: 1 / 1;
   padding: 1rem 0;
   object-fit: cover;
@@ -77,6 +105,7 @@ body {
 
 .featured-title {
   font-weight: 600;
+  word-break: break-all;
 }
 
 .featured-sub {
@@ -90,13 +119,13 @@ body {
 .featured-img-col:before {
   content: "";
   position: absolute;
-  left: -1rem;
-  top: -1rem;
+  left: 0.9rem;
+  top: -1.25rem;
   width: 4rem;
   height: 4rem;
   z-index: -1;
   background: repeating-conic-gradient($c-background 0% 25%, transparent 0% 50%)
-    50% / 0.8rem 0.8rem;
+    50% / 1rem 1rem;
 }
 
 .partner {
@@ -158,11 +187,15 @@ body {
 
 .content-card {
   border-radius: 1.5rem;
-  background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
+  background: linear-gradient(
+    170deg,
+    rgba(58, 56, 56, 0.623) 0%,
+    rgb(31, 31, 31) 100%
+  );
   position: relative;
   // box-shadow: 0 25px 50px rgba(0,0,0,0.55);
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
   // background-color: $c-secondary;
   opacity: 0.9;
 }
@@ -212,7 +245,16 @@ body {
   .partner-imgs {
     width: 75%;
   }
+
   .content-card:hover {
     transform: scale(1.2);
+  }
+
+  .main-bg:before {
+    background-position-y: -10rem;
+  }
+
+  .featured-img-col:before {
+    left: 1.5rem;
   }
 }

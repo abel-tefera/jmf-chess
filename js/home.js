@@ -50,7 +50,7 @@ const featuredData = [
     featuredName: "Ian Nepomniachtchi",
     featuredSub: "Grand Master | Russia",
     featuredDesc: `GM Ian Nepomniachtchi is a Russian super grandmaster 
-    who won the 2020-21 Candidates Tournament.
+    who won the \`21 Candidates Tournament.
     `,
     featuredImgSrc: "assets/Ian.png",
   },
@@ -107,7 +107,7 @@ class featuredCard extends HTMLElement {
     this.innerHTML = `<div
       class="row position-relative justify-content-between mx-2"
     >
-      <div class="col-6 featured-img-col p-0">
+      <div class="d-flex justify-content-end col-6 featured-img-col p-0">
         <img class="featured-img p-0" src="${featuredImgSrc.value}" />
       </div>
       <div class="col-6 px-0 ps-3">
@@ -162,7 +162,7 @@ const main = () => {
     const { featuredName, featuredSub, featuredDesc, featuredImgSrc } =
       featured;
     const featuredItem = document.createElement("div");
-    featuredItem.classList.add("col-lg-6", "col-sm-11", "col-md-9", "my-4");
+    featuredItem.classList.add("col-lg-6", "col-sm-11", "col-md-9", "my-5");
     featuredItem.innerHTML = `<featured-card
     i='${i}'
     featuredName='${featuredName}'

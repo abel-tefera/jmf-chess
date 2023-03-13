@@ -10,6 +10,26 @@ body {
   color: #ec5242;
 }
 
+.main-bg {
+  position: relative;
+}
+
+.main-bg:before {
+  content: "";
+  position: absolute;
+  height: 120%;
+  width: 100%;
+  top: -3rem;
+  background: url("assets/chess-bg.svg");
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: opacity(0.2);
+  background-position-x: center;
+  overflow-y: hidden;
+}
+
 .logo {
   width: 2.65rem;
 }
@@ -17,7 +37,7 @@ body {
 .heading-sub {
   font-weight: 600;
   background: rgb(233, 60, 42);
-  background: linear-gradient(90deg, rgb(233, 60, 42) 32%, rgb(212, 7, 7) 45%);
+  background: url("assets/abstract.jpg");
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -53,7 +73,8 @@ body {
 }
 
 .featured-img {
-  width: 100%;
+  height: fit-content;
+  width: 80%;
   aspect-ratio: 1/1;
   padding: 1rem 0;
   object-fit: cover;
@@ -67,6 +88,7 @@ body {
 
 .featured-title {
   font-weight: 600;
+  word-break: break-all;
 }
 
 .featured-sub {
@@ -80,12 +102,12 @@ body {
 .featured-img-col:before {
   content: "";
   position: absolute;
-  left: -1rem;
-  top: -1rem;
+  left: 0.9rem;
+  top: -1.25rem;
   width: 4rem;
   height: 4rem;
   z-index: -1;
-  background: repeating-conic-gradient(#d3d3d3 0% 25%, transparent 0% 50%) 50%/0.8rem 0.8rem;
+  background: repeating-conic-gradient(#d3d3d3 0% 25%, transparent 0% 50%) 50%/1rem 1rem;
 }
 
 .partner {
@@ -180,6 +202,12 @@ body {
   }
   .content-card:hover {
     transform: scale(1.2);
+  }
+  .main-bg:before {
+    background-position-y: -10rem;
+  }
+  .featured-img-col:before {
+    left: 1.5rem;
   }
 }
 
