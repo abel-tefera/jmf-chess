@@ -54,6 +54,7 @@ body {
 
 .featured-img {
   width: 100%;
+  aspect-ratio: 1/1;
   padding: 1rem 0;
   object-fit: cover;
 }

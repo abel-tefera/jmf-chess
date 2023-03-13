@@ -40,25 +40,26 @@ const programData = [
 
 const featuredData = [
   {
-    featuredName: "Dr House",
-    featuredSub: "Medical Doctor, MD",
-    featuredDesc: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    Doloremque, ducimus.`,
-    featuredImgSrc: "assets/pic.png",
+    featuredName: "Magnus Carlsen",
+    featuredSub: "Grand Master | Norway",
+    featuredDesc: `GM Magnus Carlsen is the current world chess champion. 
+    To many people, he's the best to ever play the game.`,
+    featuredImgSrc: "assets/magnus.jpeg",
   },
   {
-    featuredName: "Dr House",
-    featuredSub: "Medical Doctor, MD",
-    featuredDesc: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    Doloremque, ducimus.`,
-    featuredImgSrc: "assets/pic.png",
+    featuredName: "Ian Nepomniachtchi",
+    featuredSub: "Grand Master | Russia",
+    featuredDesc: `GM Ian Nepomniachtchi is a Russian super grandmaster 
+    who won the 2020-21 Candidates Tournament.
+    `,
+    featuredImgSrc: "assets/Ian.png",
   },
   {
-    featuredName: "Dr House",
-    featuredSub: "Medical Doctor, MD",
-    featuredDesc: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    Doloremque, ducimus.`,
-    featuredImgSrc: "assets/pic.png",
+    featuredName: "Ding Liren",
+    featuredSub: "Grand Master | China",
+    featuredDesc: `Ding Liren is a Chinese super grandmaster who will play against
+     GM Ian Nepo in the 2023 World Championship.`,
+    featuredImgSrc: "assets/ding.png",
   },
   {
     featuredName: "Dr House",
@@ -129,12 +130,7 @@ customElements.define("featured-card", featuredCard);
 // customElements.define("custom-footer", footer);
 
 const main = () => {
-  createHeader([
-    'about',
-    'program',
-    'speakers',
-    'partner'
-  ]);
+  createHeader(["about", "program", "speakers", "partner"]);
   createFooter();
   for (const [i, program] of programData.entries()) {
     const { title, imgSrc, description } = program;
