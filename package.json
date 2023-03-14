@@ -20,6 +20,8 @@
   "homepage": "https://github.com/abel-tefera/html-css-capstone#readme",
   "devDependencies": {
     "eslint": "^8.36.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "stylelint": "^15.1.0",
+    "stylelint-config-standard": "^30.0.1"
   }
 }
