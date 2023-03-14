@@ -41,14 +41,14 @@ const programData = [
 const featuredData = [
   {
     featuredName: "Magnus Carlsen",
-    featuredSub: "Grand Master | Norway",
+    featuredSub: "Grand Master",
     featuredDesc: `GM Magnus Carlsen is the current world chess champion. 
-    To many people, he's the best to ever play the game.`,
+    To many people, he\`s the best to ever play the game.`,
     featuredImgSrc: "assets/magnus.jpeg",
   },
   {
-    featuredName: "Ian Nepomniachtchi",
-    featuredSub: "Grand Master | Russia",
+    featuredName: 'Ian "Nepo"',
+    featuredSub: "Grand Master",
     featuredDesc: `GM Ian Nepomniachtchi is a Russian super grandmaster 
     who won the \`21 Candidates Tournament.
     `,
@@ -56,9 +56,9 @@ const featuredData = [
   },
   {
     featuredName: "Ding Liren",
-    featuredSub: "Grand Master | China",
+    featuredSub: "Grand Master",
     featuredDesc: `Ding Liren is a Chinese super grandmaster who will play against
-     GM Ian Nepo in the 2023 World Championship.`,
+     GM Ian Nepo in the \`23 World Championship.`,
     featuredImgSrc: "assets/ding.png",
   },
   {
@@ -107,10 +107,10 @@ class featuredCard extends HTMLElement {
     this.innerHTML = `<div
       class="row position-relative justify-content-between mx-2"
     >
-      <div class="d-flex justify-content-end col-6 featured-img-col p-0">
+      <div class="d-flex justify-content-center col-6 featured-img-col p-0">
         <img class="featured-img p-0" src="${featuredImgSrc.value}" />
       </div>
-      <div class="col-6 px-0 ps-3">
+      <div class="col-6 px-0 ps-1">
         <div class="flex-column featured-content">
           <h3 class="featured-title mt-2 mt-lg-0">${featuredName.value}</h3>
           <h6 class="featured-sub h6">${featuredSub.value}</h6>
@@ -126,12 +126,80 @@ class featuredCard extends HTMLElement {
 
 customElements.define("program-card", programCard);
 customElements.define("featured-card", featuredCard);
-// customElements.define("header-nav", header);
-// customElements.define("custom-footer", footer);
+
+const featuredContainer = document.querySelector(".featured-cards");
+const programContainer = document.querySelector(".program-container");
+
+let isScreenCurrentlySmall;
+let moreIsSeen;
+
+const isSmallScreen = () => {
+  const screenSize = document.documentElement.clientWidth || window.innerWidth;
+  if (screenSize < 992) {
+    return true;
+  }
+  return false;
+};
+
+const populateFeatured = () => {
+  const lastBtnClickHandler = (init, btnEl) => {
+    if (!moreIsSeen) {
+      if (!init) {
+        generateFeaturedCards(featuredData.length - 1, 2);
+        moreIsSeen = true;
+        btnEl.innerHTML = "See Less";
+      } else {
+        btnEl.classList.add("btn", "btn-light", "w-75", "see-more-btn");
+        btnEl.setAttribute("type", "button");
+        btnEl.innerHTML = "See More";
+      }
+    } else if (moreIsSeen) {
+      featuredContainer.innerHTML = "";
+      generateFeaturedCards(1);
+      moreIsSeen = false;
+      btnEl.innerHTML = "See More";
+    }
+    featuredContainer.insertAdjacentElement("beforeend", btnEl);
+  };
+
+  if (isSmallScreen()) {
+    generateFeaturedCards(1);
+
+    const lastBtn = document.createElement("button");
+
+    lastBtn.onclick = () => {
+      lastBtnClickHandler(false, lastBtn);
+    };
+    lastBtnClickHandler(true, lastBtn);
+  } else {
+    generateFeaturedCards();
+    isScreenCurrentlySmall = false;
+  }
+};
+
+const generateFeaturedCards = (end = featuredData.length - 1, start = 0) => {
+  for (let i = start; i <= end; i++) {
+    const { featuredName, featuredSub, featuredDesc, featuredImgSrc } =
+      featuredData[i];
+    const featuredItem = document.createElement("div");
+    featuredItem.classList.add("col-lg-6", "col-sm-11", "col-md-9", "my-4");
+    featuredItem.innerHTML = `<featured-card
+    i='${i}'
+    featuredName='${featuredName}'
+    featuredSub='${featuredSub}'
+    featuredDesc='${featuredDesc}'
+    featuredImgSrc='${featuredImgSrc}'
+    >
+    </featured-card>`;
+
+    featuredContainer.appendChild(featuredItem);
+  }
+};
 
 const main = () => {
   createHeader(["about", "program", "speakers", "partner"]);
   createFooter();
+
   for (const [i, program] of programData.entries()) {
     const { title, imgSrc, description } = program;
     const programItem = document.createElement("div");
@@ -154,27 +222,22 @@ const main = () => {
     >
     </program-card>`;
 
-    const programContainer = document.querySelector(".program-container");
     programContainer.appendChild(programItem);
   }
 
-  for (const [i, featured] of featuredData.entries()) {
-    const { featuredName, featuredSub, featuredDesc, featuredImgSrc } =
-      featured;
-    const featuredItem = document.createElement("div");
-    featuredItem.classList.add("col-lg-6", "col-sm-11", "col-md-9", "my-5");
-    featuredItem.innerHTML = `<featured-card
-    i='${i}'
-    featuredName='${featuredName}'
-    featuredSub='${featuredSub}'
-    featuredDesc='${featuredDesc}'
-    featuredImgSrc='${featuredImgSrc}'
-    >
-    </featured-card>`;
-
-    const featuredContainer = document.querySelector(".featured-cards");
-    featuredContainer.appendChild(featuredItem);
-  }
+  populateFeatured();
 };
 
 main();
+
+window.onresize = () => {
+  if (isSmallScreen() && !isScreenCurrentlySmall) {
+    featuredContainer.innerHTML = "";
+    populateFeatured();
+    isScreenCurrentlySmall = true;
+  } else if (!isSmallScreen() && isScreenCurrentlySmall) {
+    featuredContainer.innerHTML = "";
+    populateFeatured();
+    isScreenCurrentlySmall = false;
+  }
+};
