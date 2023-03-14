@@ -7,6 +7,7 @@ $c-primary: #ec5242;
 $c-primary-bright: #ff432f;
 $c-secondary: #272a31;
 $c-background: #d3d3d3;
+$c-background-light: #e7e7e7;
 $c-chess-com: #769656;
 
 * {
@@ -17,12 +18,22 @@ body {
   font-family: Lato, sans-serif;
 }
 
+.main-header {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+
 .heading {
   color: $c-primary;
 }
 
 .main-bg {
   position: relative;
+  margin-top: 6rem;
 }
 
 .main-bg::before {
@@ -31,7 +42,7 @@ body {
   height: 125%;
   width: 100%;
   top: -3rem;
-  background: url("assets/chess-bg.svg");
+  background: url("../assets/chess-bg.svg");
   z-index: -1;
   background-repeat: no-repeat;
   background-size: cover;
@@ -39,26 +50,42 @@ body {
   filter: opacity(0.2);
   background-position-x: center;
   overflow-y: hidden;
+  background-position-y: -9rem;
 }
 
 .logo {
-  width: 2.65rem;
+  width: 2rem;
+}
+
+.disable-default {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.disable-default-link,
+.disable-default-link:hover,
+.disable-default-link:focus,
+.disable-default-link:active {
+  text-decoration: none;
+  color: inherit;
 }
 
 .heading-sub {
   font-weight: 600;
   background: rgb(233 60 42);
-  background: url("assets/abstract-2.jpg");
+  background: url("../assets/abstract-2.jpg");
   background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
 
 .sub-heading {
-  margin: 1rem;
-  padding: 1rem;
-  border: 1px solid $c-background;
+  border: 1px solid white;
+  background-color: $c-background-light;
 }
 
 .card-img {
@@ -76,7 +103,7 @@ body {
 }
 
 .content {
-  background: url("assets/bg.png");
+  background: url("../assets/bg.png");
   width: 100%;
   height: 100%;
   opacity: 0.9;
@@ -145,7 +172,7 @@ body {
 }
 
 .navbar-right-btn {
-  border: 5px solid $c-primary;
+  // border: 5px solid $c-primary;
 }
 
 .about-header {
@@ -205,6 +232,21 @@ body {
   border: 1px solid;
 }
 
+.hamburger-img {
+  width: 3rem;
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .links-container {
+    display: none !important;
+  }
+
+  .logo-link {
+    display: none !important;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .card-subtitle {
     text-align: center;
@@ -225,6 +267,21 @@ body {
 
   .content-card:hover {
     transform: scale(1.1);
+  }
+
+  .main-header {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    height: 6rem;
+    position: inherit;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .links-container {
+    display: flex;
   }
 }
 
