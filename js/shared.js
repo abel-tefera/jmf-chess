@@ -1,7 +1,20 @@
 export class header extends HTMLElement {
   connectedCallback() {
     const { links: linksM } = this.attributes;
-    const links = linksM.value.split(',');
+    const links = linksM.value.split(",");
+
+    const aLinks = links.map((link, i) => {
+      if (i > 0) {
+        return `<li class="nav-item">
+        <a class="nav-link text-capitalize" href="#${link}">${link}</a>
+      </li>`;
+      }
+    });
+
+    const aLinksMK = aLinks.join("\n")
+
+    console.log(aLinksMK);
+
     this.innerHTML = `<nav class="navbar navbar-light bg-light navbar-expand-md">
       <div class="container-fluid">
       <a class="navbar-brand ps-md-5 ms-md-5"
@@ -23,18 +36,10 @@ export class header extends HTMLElement {
           <li class="nav-item">
             <a class="nav-link active text-capitalize" aria-current="page" href="${links[0]}.html">${links[0]}</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-capitalize" href="#${links[1]}">${links[1]}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-capitalize" href="#${links[2]}">${links[2]}</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link text-capitalize" href="#${links[3]}">${links[3]}</a>
-        </li>
+          ${aLinksMK}
         </ul>
         <div class="ms-lg-5 ps-md-5">
-          <p class="navbar-right-btn p-3">CC Campain</p>
+          <p class="navbar-right-btn p-3">JMF Chess</p>
         </div>
       </div>
     </div>

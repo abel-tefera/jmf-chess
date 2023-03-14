@@ -1,11 +1,8 @@
-import { createFooter, createHeader, footer, header } from "./shared.js";
+import { createFooter, createHeader } from "./shared.js";
 
 const main = () => {
     createHeader([
-        'home',
-        'logo',
-        'past',
-        'X'
+        'Home',
     ]);
     createFooter('dark');
 }
