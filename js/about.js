@@ -1,10 +1,10 @@
-import { createFooter, createHeader } from "./shared.js";
+import {createFooter, createHeader} from './shared.js';
 
 const main = () => {
-    createHeader([
-        'Home',
-    ]);
-    createFooter('dark');
-}
+  createHeader([
+    'Home',
+  ]);
+  createFooter('dark');
+};
 
 main();

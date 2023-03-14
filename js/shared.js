@@ -1,7 +1,10 @@
+/* eslint-disable require-jsdoc */
+/* eslint-disable no-unused-vars */
+
 export class header extends HTMLElement {
   connectedCallback() {
-    const { links: linksM } = this.attributes;
-    const links = linksM.value.split(",");
+    const {links: linksM} = this.attributes;
+    const links = linksM.value.split(',');
 
     const aLinks = links.map((link, i) => {
       if (i > 0) {
@@ -11,11 +14,12 @@ export class header extends HTMLElement {
       }
     });
 
-    const aLinksMK = aLinks.join("\n")
+    const aLinksMK = aLinks.join('\n');
 
     console.log(aLinksMK);
 
-    this.innerHTML = `<nav class="navbar navbar-light bg-light navbar-expand-md">
+    this.innerHTML = `<nav class="navbar 
+    navbar-light bg-light navbar-expand-md">
       <div class="container-fluid">
       <a class="navbar-brand ps-md-5 ms-md-5"
         ><img class="logo" src="assets/apple.svg"
@@ -34,7 +38,8 @@ export class header extends HTMLElement {
       <div class="custom-nav collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav me-lg-5 pe-md-5">
           <li class="nav-item">
-            <a class="nav-link active text-capitalize" aria-current="page" href="${links[0]}.html">${links[0]}</a>
+            <a class="nav-link active text-capitalize" 
+            aria-current="page" href="${links[0]}.html">${links[0]}</a>
           </li>
           ${aLinksMK}
         </ul>
@@ -67,23 +72,23 @@ export class footer extends HTMLElement {
   }
 }
 
-customElements.define("header-nav", header);
-customElements.define("custom-footer", footer);
+customElements.define('header-nav', header);
+customElements.define('custom-footer', footer);
 
 export const createHeader = (links) => {
-  const header = document.createElement("header");
-  header.classList.add("w-100");
+  const header = document.createElement('header');
+  header.classList.add('w-100');
   header.innerHTML = `<header-nav
   links=${links}
   ></header-nav>`;
-  document.body.insertAdjacentElement("afterbegin", header);
+  document.body.insertAdjacentElement('afterbegin', header);
 };
 
 export const createFooter = (bg) => {
-  const footer = document.createElement("footer");
+  const footer = document.createElement('footer');
   if (bg) {
-    footer.classList.add("footer-dark", "text-white");
+    footer.classList.add('footer-dark', 'text-white');
   }
   footer.innerHTML = `<custom-footer></custom-footer>`;
-  document.body.insertAdjacentElement("beforeend", footer);
+  document.body.insertAdjacentElement('beforeend', footer);
 };

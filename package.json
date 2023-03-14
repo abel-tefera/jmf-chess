@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/abel-tefera/html-css-capstone/issues"
   },
-  "homepage": "https://github.com/abel-tefera/html-css-capstone#readme"
+  "homepage": "https://github.com/abel-tefera/html-css-capstone#readme",
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-google": "^0.14.0"
+  }
 }
