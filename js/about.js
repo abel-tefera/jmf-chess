@@ -2,7 +2,7 @@ import {createFooter, createHeader} from './shared.js';
 
 const main = () => {
   createHeader([
-    'Home',
+    'home',
   ]);
   createFooter('dark');
 };
