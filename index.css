@@ -17,7 +17,7 @@ body {
 .main-bg:before {
   content: "";
   position: absolute;
-  height: 120%;
+  height: 125%;
   width: 100%;
   top: -3rem;
   background: url("assets/chess-bg.svg");
@@ -28,6 +28,7 @@ body {
   filter: opacity(0.2);
   background-position-x: center;
   overflow-y: hidden;
+  background-position-y: -3rem;
 }
 
 .logo {
@@ -75,8 +76,8 @@ body {
 .featured-img {
   height: fit-content;
   width: 80%;
+  max-height: 80%;
   aspect-ratio: 1/1;
-  padding: 1rem 0;
   object-fit: cover;
 }
 
@@ -89,6 +90,7 @@ body {
 .featured-title {
   font-weight: 600;
   word-break: break-all;
+  font-size: 1.2rem;
 }
 
 .featured-sub {
@@ -99,11 +101,15 @@ body {
   font-size: 1rem;
 }
 
+.featured-img-col {
+  position: relative;
+}
+
 .featured-img-col:before {
   content: "";
   position: absolute;
-  left: 0.9rem;
-  top: -1.25rem;
+  left: 0%;
+  top: -1rem;
   width: 4rem;
   height: 4rem;
   z-index: -1;
@@ -162,7 +168,6 @@ body {
 }
 
 .content-card {
-  border-radius: 1.5rem;
   background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
   position: relative;
   cursor: pointer;
@@ -176,6 +181,14 @@ body {
 
 .footer-p {
   max-width: 30rem;
+}
+
+.see-more-btn {
+  border: 1px solid;
+}
+
+.see-more-btn:hover {
+  border: 1px solid;
 }
 
 @media only screen and (min-width: 768px) {
@@ -203,11 +216,10 @@ body {
   .content-card:hover {
     transform: scale(1.2);
   }
+}
+@media only screen and (min-width: 1200px) {
   .main-bg:before {
-    background-position-y: -10rem;
-  }
-  .featured-img-col:before {
-    left: 1.5rem;
+    background-position-y: -16rem;
   }
 }
 
