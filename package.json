@@ -7,10 +7,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abel-tefera/html-css-capstone.git"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "node-scss": "^7.0.3"
-  }
+  "bugs": {
+    "url": "https://github.com/abel-tefera/html-css-capstone/issues"
+  },
+  "homepage": "https://github.com/abel-tefera/html-css-capstone#readme"
 }
