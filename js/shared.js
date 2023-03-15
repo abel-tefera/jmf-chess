@@ -22,42 +22,12 @@ export class header extends HTMLElement {
 
     const aLinksMK = aLinks.join("\n");
 
-    console.log(aLinksMK);
-
-    // this.innerHTML = `<nav class="navbar
-    // navbar-light bg-light navbar-expand-md">
-    //   <div class="container-fluid">
-    //   <a class="navbar-brand ps-md-5 ms-md-5"
-    //     ><img class="logo" src="assets/apple.svg"
-    //   /></a>
-    //   <button
-    //     class="navbar-toggler"
-    //     type="button"
-    //     data-bs-toggle="collapse"
-    //     data-bs-target="#navbarNavDropdown"
-    //     aria-controls="navbarNavDropdown"
-    //     aria-expanded="false"
-    //     aria-label="Toggle navigation"
-    //   >
-    //     <span class="navbar-toggler-icon"></span>
-    //   </button>
-    //   <div class="custom-nav collapse navbar-collapse" id="navbarNavDropdown">
-    //     <ul class="navbar-nav me-lg-5 pe-md-5">
-    //       <li class="nav-item">
-    //         <a class="nav-link active text-capitalize"
-    //         aria-current="page" href="${links[0]}.html">${links[0]}</a>
-    //       </li>
-    //       ${aLinksMK}
-    //     </ul>
-    //     <div class="ms-lg-5 ps-md-5">
-    //       <p class="navbar-right-btn p-3">JMF Chess</p>
-    //     </div>
-    //   </div>
-    // </div>
-    // </nav>`;
-
-    this.innerHTML = `<nav class="hamburger mx-3" id="open-menu">
-    <img alt="menu" src="assets/hamburger.svg" class="hamburger-img" />
+    this.innerHTML = `<nav class="hamburger" id="open-menu">
+    <div class="hamburger-container">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+    </div>
   </nav>
   <a class="logo-link ps-md-5 ms-md-5">
   <img class="logo" src="assets/apple.svg" /></a>
@@ -108,6 +78,25 @@ export class footer extends HTMLElement {
 customElements.define("header-nav", header);
 customElements.define("custom-footer", footer);
 
+const showMobileMenu = () => {
+  const burger = document.querySelector(".hamburger-container");
+  burger.classList.add("change");
+  burger.style.position = "fixed";
+
+  const menu = document.getElementById("mobile-menu");
+  menu.style.height = "100%";
+  menu.style.width = "100%";
+};
+
+const closeMobileMenu = () => {
+  const burger = document.querySelector(".hamburger-container");
+  burger.classList.remove("change");
+  burger.style.position = "absolute";
+
+  const menu = document.getElementById("mobile-menu");
+  menu.style.height = "0";
+};
+
 export const createHeader = (links) => {
   const header = document.createElement("header");
   header.classList.add("main-header", "px-2");
@@ -115,19 +104,41 @@ export const createHeader = (links) => {
   style="display: contents"
   links=${links}
   ></header-nav>`;
+
+  const mobileLinks = links.map((link, i) => {
+    if (i > 0) {
+      return `<a href="#${link}" class="mobile-link text-capitalize">${link}</a>`;
+    } else {
+      return `<a href="${link}.html" class="mobile-link text-capitalize">${link}</a>`;
+    }
+  });
+
+  const mobileLinksMK = mobileLinks.join("\n");
+
   document.body.insertAdjacentElement("afterbegin", header);
 
-  const mobileOverlay = document.createElement('div');
-  mobileOverlay.classList.add('mobile-overlay');
-  mobileOverlay.setAttribute('id', 'mobile-menu');
-  mobileOverlay.innerHTML = `<a href="javascript:void(0)" class="closebtn" id="close-menu"
-  >&times;</a
->
-<div class="overlay-content">
-  <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
-  <a href="#about" onclick="closeMobileMenu()">About</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-</div>`
+  const burger = document.querySelector(".hamburger-container");
+
+  burger.addEventListener("click", () => {
+    if (burger.classList.contains("change")) {
+      closeMobileMenu();
+    } else {
+      showMobileMenu();
+      const aMobileLink = document.querySelectorAll('.mobile-link');
+      aMobileLink.forEach((link) => {
+        link.addEventListener('click', closeMobileMenu)
+      })
+    }
+  });
+
+  const mobileOverlay = document.createElement("div");
+  mobileOverlay.classList.add("mobile-overlay");
+  mobileOverlay.setAttribute("id", "mobile-menu");
+  mobileOverlay.innerHTML = `
+    <div class="overlay-content d-flex flex-column">
+    ${mobileLinksMK}
+    </div>`;
+  document.body.insertAdjacentElement("afterbegin", mobileOverlay);
 };
 
 export const createFooter = (bg) => {
