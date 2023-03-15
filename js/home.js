@@ -41,14 +41,14 @@ const programData = [
 const featuredData = [
   {
     featuredName: "Magnus Carlsen",
-    featuredSub: "Grand Master",
+    featuredSub: "GM | Norway",
     featuredDesc: `GM Magnus Carlsen is the current world chess champion. 
     To many people, he\`s the best to ever play the game.`,
     featuredImgSrc: "assets/magnus.jpeg",
   },
   {
     featuredName: 'Ian "Nepo"',
-    featuredSub: "Grand Master",
+    featuredSub: "GM | Russia",
     featuredDesc: `GM Ian Nepomniachtchi is a Russian super grandmaster 
     who won the \`21 Candidates Tournament.
     `,
@@ -56,31 +56,30 @@ const featuredData = [
   },
   {
     featuredName: "Ding Liren",
-    featuredSub: "Grand Master",
+    featuredSub: "GM | China",
     featuredDesc: `Ding Liren is a Chinese super grandmaster 
     who will play against GM Ian Nepo in the \`23 World Championship.`,
     featuredImgSrc: "assets/ding.png",
   },
   {
-    featuredName: "Dr House",
-    featuredSub: "Medical Doctor, MD",
-    featuredDesc: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    Doloremque, ducimus.`,
-    featuredImgSrc: "assets/pic.png",
+    featuredName: "Alireza Firouzja",
+    featuredSub: "GM | France",
+    featuredDesc: `Alireza Firouzja is a world championship candidate 
+    and two-time Iranian champion.`,
+    featuredImgSrc: "assets/alireza.png",
   },
   {
-    featuredName: "Dr House",
-    featuredSub: "Medical Doctor, MD",
-    featuredDesc: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    Doloremque, ducimus.`,
-    featuredImgSrc: "assets/pic.png",
+    featuredName: "Hikaru Nakamura",
+    featuredSub: "GM | United States",
+    featuredDesc: `Born in Hirakata, Japan, Nakamura has been one of the world\`s 
+    top players for well over a decade.`,
+    featuredImgSrc: "assets/naka.png",
   },
   {
-    featuredName: "Dr House",
-    featuredSub: "Medical Doctor, MD",
-    featuredDesc: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    Doloremque, ducimus.`,
-    featuredImgSrc: "assets/pic.png",
+    featuredName: "Anish Giri",
+    featuredSub: "GM | Netherlands",
+    featuredDesc: `GM Anish Giri is a four-time Dutch champion and a world-class player.`,
+    featuredImgSrc: "assets/giri.jpeg",
   },
 ];
 
@@ -148,17 +147,19 @@ const populateFeatured = () => {
       if (!init) {
         generateFeaturedCards(featuredData.length - 1, 2);
         moreIsSeen = true;
-        btnEl.innerHTML = "See Less";
+        btnEl.innerHTML = "Less";
+        btnEl.classList.add("see-less-btn");
       } else {
-        btnEl.classList.add("btn", "btn-light", "w-75", "see-more-btn");
+        btnEl.classList.add("w-75", "see-more-btn", "p-3");
         btnEl.setAttribute("type", "button");
-        btnEl.innerHTML = "See More";
+        btnEl.innerHTML = "More";
       }
     } else if (moreIsSeen) {
       featuredContainer.innerHTML = "";
       generateFeaturedCards(1);
       moreIsSeen = false;
-      btnEl.innerHTML = "See More";
+      btnEl.classList.remove("see-less-btn");
+      btnEl.innerHTML = "More";
     }
     featuredContainer.insertAdjacentElement("beforeend", btnEl);
   };
@@ -198,7 +199,7 @@ const generateFeaturedCards = (end = featuredData.length - 1, start = 0) => {
 };
 
 const main = () => {
-  createHeader(["about", "program", "players", "partner"]);
+  createHeader(["about", "program", "guests", "partner"]);
   createFooter();
 
   for (const [i, program] of programData.entries()) {
