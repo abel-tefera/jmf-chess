@@ -11,11 +11,10 @@ body {
 }
 
 .main-header {
-  height: 3rem;
+  height: 0;
   width: 100%;
   display: flex;
   align-items: center;
-  position: absolute;
   top: 0;
 }
 
@@ -26,6 +25,10 @@ body {
 .main-bg {
   position: relative;
   margin-top: 6rem;
+}
+
+.w-90 {
+  width: 90%;
 }
 
 .main-bg::before {
@@ -42,7 +45,6 @@ body {
   filter: opacity(0.2);
   background-position-x: center;
   overflow-y: hidden;
-  background-position-y: -9rem;
 }
 
 .logo {
@@ -78,6 +80,7 @@ body {
 .sub-heading {
   border: 1px solid white;
   background-color: #e7e7e7;
+  max-width: 50rem;
 }
 
 .card-img {
@@ -87,10 +90,11 @@ body {
 
 .card-title {
   color: #ff432f;
+  min-width: 5rem;
 }
 
 .card-subtitle {
-  color: #d3d3d3;
+  color: #e7e7e7;
   text-align: start;
 }
 
@@ -111,8 +115,8 @@ body {
 
 .featured-content > hr {
   width: 15%;
-  color: #d3d3d3;
-  border-bottom: 0.15rem solid #d3d3d3;
+  color: #e7e7e7;
+  border-bottom: 0.15rem solid #e7e7e7;
 }
 
 .featured-title {
@@ -141,11 +145,11 @@ body {
   width: 4rem;
   height: 4rem;
   z-index: -1;
-  background: repeating-conic-gradient(#d3d3d3 0% 25%, transparent 0% 50%) 50%/1rem 1rem;
+  background: repeating-conic-gradient(#e7e7e7 0% 25%, transparent 0% 50%) 50%/1rem 1rem;
 }
 
 .partner {
-  background-color: #d3d3d3;
+  background-color: #e7e7e7;
 }
 
 .featured-flex {
@@ -167,14 +171,14 @@ body {
 }
 
 .about-logo {
-  border: 1px solid #d3d3d3;
+  border: 1px solid #e7e7e7;
   width: 50%;
 }
 
 .about-section-hr {
   width: 95vw;
-  color: #d3d3d3;
-  border-bottom: 0.15rem solid #d3d3d3;
+  color: #e7e7e7;
+  border-bottom: 0.15rem solid #e7e7e7;
 }
 
 .red-hr {
@@ -184,11 +188,37 @@ body {
 }
 
 .past-event-divs {
-  background-color: #ec5242;
+  position: relative;
+  background: url("../assets/chess-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.past-event-divs h2 {
+  z-index: 2;
+}
+.past-event-divs h5 {
+  z-index: 2;
+}
+
+.past-event-divs::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: #ff432f;
+  opacity: 0.75;
+  z-index: 1;
 }
 
 .footer-dark {
   background-color: #272a31;
+}
+
+.join-div {
+  background-color: #ec5242;
+  cursor: pointer;
 }
 
 .content-card {
@@ -215,9 +245,73 @@ body {
   border: 1px solid;
 }
 
-.hamburger-img {
-  width: 3rem;
-  margin-top: 2rem;
+.hamburger {
+  margin-top: 3.5rem;
+  margin-left: 1.5rem;
+}
+
+.hamburger-container {
+  width: 1.875rem;
+  height: 1.25rem;
+  cursor: pointer;
+  position: absolute;
+  z-index: 3;
+}
+
+.hamburger-container.change > .line-1 {
+  transform: translate(0, 6px) rotate(-45deg);
+  background-color: #fff;
+}
+
+.hamburger-container.change > .line-2 {
+  opacity: 0;
+  background-color: #fff;
+}
+
+.hamburger-container.change > .line-3 {
+  transform: translate(0, -12px) rotate(45deg);
+  background-color: #fff;
+}
+
+.hamburger-container > .line {
+  width: 100%;
+  height: 0.25rem;
+  margin-bottom: 5px;
+  background-color: #272a31;
+  transition: transform 0.5s, opacity 0.4s, background-color 0.75s;
+}
+
+.mobile-overlay {
+  height: 0;
+  width: 0;
+  position: fixed;
+  background-color: hsla(222, 11%, 7%, 0.7);
+  z-index: 2;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  transition: height 0.5s;
+  backdrop-filter: blur(0.5rem);
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.overlay-content a {
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 2.75rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
 }
 
 @media only screen and (max-width: 768px) {
@@ -225,6 +319,9 @@ body {
     display: none !important;
   }
   .logo-link {
+    display: none !important;
+  }
+  .see-prog-div {
     display: none !important;
   }
 }
@@ -252,6 +349,9 @@ body {
     position: inherit;
   }
   .hamburger {
+    display: none;
+  }
+  .join-div {
     display: none;
   }
   .links-container {
