@@ -11,7 +11,7 @@ export class header extends HTMLElement {
       if (i > 0) {
         return `<li class="mx-4">
         <a
-          class="disable-default-link text-capitalize"
+          class="disable-default-link text-capitalize header-link"
           aria-current="page"
           href="#${link}"
           >${link}</a
@@ -36,10 +36,10 @@ export class header extends HTMLElement {
     class="links-container container-fluid 
     d-flex justify-content-end align-items-center"
   >
-    <ul class="d-flex flex-row disable-default me-lg-5 pe-md-5">
+    <ul class="d-flex flex-row disable-default me-lg-3 pe-md-5">
       <li class="mx-4">
         <a
-          class="disable-default-link text-capitalize"
+          class="disable-default-link text-capitalize header-link"
           aria-current="page"
           href="${links[0]}.html"
           >${links[0]}</a
@@ -47,8 +47,8 @@ export class header extends HTMLElement {
       </li>
     ${aLinksMK}
     </ul>
-    <div class="ms-lg-5 ps-md-5 pe-md-5 me-lg-5">
-      <p class="navbar-right-btn m-0 p-0">JMF Chess</p>
+    <div class="ms-lg-5 ps-md-3 pe-md-3 me-lg-3">
+      <p class="navbar-right-btn m-0 py-md-2 px-md-3 text-center">JMF Chess</p>
     </div>
   </div>
     </header>`;

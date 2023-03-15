@@ -198,7 +198,7 @@ const generateFeaturedCards = (end = featuredData.length - 1, start = 0) => {
 };
 
 const main = () => {
-  createHeader(["about", "program", "speakers", "partner"]);
+  createHeader(["about", "program", "players", "partner"]);
   createFooter();
 
   for (const [i, program] of programData.entries()) {

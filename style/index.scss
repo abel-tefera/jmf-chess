@@ -6,6 +6,7 @@
 $c-primary: #ec5242;
 $c-primary-bright: #ff432f;
 $c-secondary: #272a31;
+$c-secondary-bright: #383d47;
 $c-background: #e7e7e7;
 $c-chess-com: #769656;
 
@@ -36,6 +37,14 @@ body {
 
 .w-90 {
   width: 90%
+}
+
+.w-60 {
+  width: 60%
+}
+
+.mobile-width {
+  width: 60%
 }
 
 .main-bg::before {
@@ -176,7 +185,8 @@ body {
 }
 
 .navbar-right-btn {
-  // border: 5px solid $c-primary;
+  border: 5px solid $c-primary;
+  color: $c-primary;
 }
 
 .about-header {
@@ -206,6 +216,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  aspect-ratio: 16 / 9;
+  place-content: center;
 
   h2 {
     z-index: 2;
@@ -304,7 +316,7 @@ body {
   height: 0;
   width: 0;
   position: fixed;
-  background-color: hsla(222, 11%, 7%, 0.7);
+  background-color: hsla(6, 100%, 59%, 0.7);
   z-index: 2;
   left: 0;
   top: 0;
@@ -331,6 +343,10 @@ body {
   color: #fff;
   display: block;
   transition: 0.3s;
+}
+
+.abt-email-link {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
@@ -387,6 +403,15 @@ body {
   .links-container {
     display: flex;
   }
+
+  .header-link:hover {
+    color: $c-primary;
+    transition: color 0.25s;
+  }
+
+  .mobile-width {
+    width: 75%
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -396,6 +421,14 @@ body {
 
   .content-card:hover {
     transform: scale(1.2);
+  }
+
+  .logo {
+    margin-left: 4rem;
+  }
+
+  .links-container {
+    margin-right: 4rem;
   }
 }
 

@@ -31,6 +31,14 @@ body {
   width: 90%;
 }
 
+.w-60 {
+  width: 60%;
+}
+
+.mobile-width {
+  width: 60%;
+}
+
 .main-bg::before {
   content: "";
   position: absolute;
@@ -166,6 +174,11 @@ body {
   aspect-ratio: 1/1;
 }
 
+.navbar-right-btn {
+  border: 5px solid #ec5242;
+  color: #ec5242;
+}
+
 .about-header {
   color: #ec5242;
 }
@@ -193,6 +206,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  aspect-ratio: 16/9;
+  place-content: center;
 }
 .past-event-divs h2 {
   z-index: 2;
@@ -285,7 +300,7 @@ body {
   height: 0;
   width: 0;
   position: fixed;
-  background-color: hsla(222, 11%, 7%, 0.7);
+  background-color: hsla(6, 100%, 59%, 0.7);
   z-index: 2;
   left: 0;
   top: 0;
@@ -312,6 +327,10 @@ body {
   color: #fff;
   display: block;
   transition: 0.3s;
+}
+
+.abt-email-link {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
@@ -357,6 +376,13 @@ body {
   .links-container {
     display: flex;
   }
+  .header-link:hover {
+    color: #ec5242;
+    transition: color 0.25s;
+  }
+  .mobile-width {
+    width: 75%;
+  }
 }
 @media only screen and (min-width: 992px) {
   .partner-imgs {
@@ -364,6 +390,12 @@ body {
   }
   .content-card:hover {
     transform: scale(1.2);
+  }
+  .logo {
+    margin-left: 4rem;
+  }
+  .links-container {
+    margin-right: 4rem;
   }
 }
 @media only screen and (min-width: 1200px) {
