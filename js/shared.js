@@ -47,8 +47,8 @@ export class header extends HTMLElement {
       </li>
     ${aLinksMK}
     </ul>
-    <div class="ms-lg-5 ps-md-3 pe-md-3 me-lg-3">
-      <p class="navbar-right-btn m-0 py-md-2 px-md-3 text-center">JMF Chess</p>
+    <div class="ms-lg-5 ps-md-3 pe-md-3 me-lg-3 py-md-2 px-md-3 text-center navbar-right-btn ">
+      <p class="m-0 p-0">JMF Chess</p>
     </div>
   </div>
     </header>`;
@@ -124,10 +124,10 @@ export const createHeader = (links) => {
       closeMobileMenu();
     } else {
       showMobileMenu();
-      const aMobileLink = document.querySelectorAll('.mobile-link');
+      const aMobileLink = document.querySelectorAll(".mobile-link");
       aMobileLink.forEach((link) => {
-        link.addEventListener('click', closeMobileMenu)
-      })
+        link.addEventListener("click", closeMobileMenu);
+      });
     }
   });
 

@@ -36,7 +36,7 @@ body {
 }
 
 .mobile-width {
-  width: 60%;
+  width: 90%;
 }
 
 .main-bg::before {
@@ -153,7 +153,7 @@ body {
   width: 4rem;
   height: 4rem;
   z-index: -1;
-  background: repeating-conic-gradient(#e7e7e7 0% 25%, transparent 0% 50%) 50%/1rem 1rem;
+  background: repeating-conic-gradient(#808080 0% 25%, transparent 0% 50%) 50%/1rem 1rem;
 }
 
 .partner {
@@ -177,6 +177,18 @@ body {
 .navbar-right-btn {
   border: 5px solid #ec5242;
   color: #ec5242;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.navbar-right-btn:hover {
+  background-color: #ec5242;
+  color: white;
+}
+
+.navbar-right-btn:active {
+  border: 5px solid darkred;
+  background-color: darkred;
 }
 
 .about-header {
@@ -202,11 +214,6 @@ body {
 
 .past-event-divs {
   position: relative;
-  background: url("../assets/chess-bg.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  aspect-ratio: 16/9;
   place-content: center;
 }
 .past-event-divs h2 {
@@ -253,11 +260,27 @@ body {
 }
 
 .see-more-btn {
-  border: 1px solid;
+  border: 1px solid #e7e7e7;
+  background-color: white;
+  position: relative;
 }
 
-.see-more-btn:hover {
-  border: 1px solid;
+.see-more-btn::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  top: 0;
+  background-color: red;
+  height: 100%;
+  background: url("../assets/drop-icon-down.svg");
+  z-index: 5;
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 60%;
+}
+
+.see-less-btn::before {
+  transform: rotate(-180deg);
 }
 
 .hamburger {
@@ -331,6 +354,22 @@ body {
 
 .abt-email-link {
   cursor: pointer;
+}
+
+.chess-abt-1 {
+  background: url("../assets/chess-abt-1.jpg");
+}
+
+.chess-abt-2 {
+  background: url("../assets/chess-abt-2.jpg");
+}
+
+.chess-abt-1,
+.chess-abt-2 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 16/9;
 }
 
 @media only screen and (max-width: 768px) {
