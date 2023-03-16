@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,9 +12,17 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/abel-tefera/html-css-capstone/issues"
   },
-  "homepage": "https://github.com/abel-tefera/html-css-capstone#readme"
+  "homepage": "https://github.com/abel-tefera/html-css-capstone#readme",
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-google": "^0.14.0",
+    "postcss-sass": "^0.5.0",
+    "postcss-scss": "^4.0.6",
+    "stylelint": "^15.1.0",
+    "stylelint-config-standard": "^30.0.1"
+  }
 }
