@@ -2,6 +2,7 @@
 /* stylelint-disable color-function-notation */
 /* stylelint-disable alpha-value-notation */
 /* stylelint-disable declaration-colon-newline-after */
+/* stylelint-disable property-no-vendor-prefix */
 
 $c-primary: #ec5242;
 $c-primary-bright: #ff432f;
@@ -282,7 +283,6 @@ body {
   width: 1rem;
   top: 0;
   background: url("../assets/drop-icon-down.svg");
-  background-color: red;
   height: 100%;
   z-index: 5;
   background-repeat: no-repeat;
