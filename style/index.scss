@@ -109,8 +109,8 @@ body {
     rgba(255, 25, 31, 0.6),
     rgba(187, 10, 15, 0.7),
     rgba(236, 82, 66, 0.8)
-    ), 
-  url("../assets/abstract-2.jpg");
+  ),
+    url("../assets/abstract-2.jpg");
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -194,7 +194,7 @@ body {
     $c-secondary-grey 0% 25%,
     transparent 0% 50%
   )
-  50% / 1rem 1rem;
+    50% / 1rem 1rem;
 }
 
 .partner {
