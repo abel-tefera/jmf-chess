@@ -180,17 +180,19 @@ export const createHeader = (links, haveTopNav = false) => {
         'd-flex',
         'align-content-center',
         'justify-content-end',
+        'pe-md-4',
     );
     topNav.innerHTML = `<ul class="topnav-ul disable-default m-0 p-0 d-flex 
-    justify-content-between align-items-center w-50">
-    <li><i class="fab fa-facebook-f text-white topnav-item"></i></li>
-    <li><i class="fab fa-twitter text-white topnav-item"></i></li>
-    <li><a href="#" class="logout text-white topnav-item 
+    justify-content-end align-items-center w-50">
+    <li class="ms-4"><i class="fab fa-facebook-f text-white 
+    topnav-item"></i></li>
+    <li class="ms-4"><i class="fab fa-twitter text-white topnav-item"></i></li>
+    <li class="ms-4"><a href="#" class="logout text-white topnav-item 
+    disable-default-link">English</a></li>
+    <li class="ms-4"><a href="#" class="mypage text-white topnav-item 
+    disable-default-link">My Page</a></li>
+    <li class="ms-4"><a href="#" class="korean text-white topnav-item 
     disable-default-link">Logout</a></li>
-    <li><a href="#" class="mypage text-white topnav-item 
-    disable-default-link">Mypage</a></li>
-    <li><a href="#" class="korean text-white topnav-item 
-    disable-default-link">Korean</a></li>
   </ul>`;
     document.body.insertAdjacentElement('afterbegin', topNav);
   } else {

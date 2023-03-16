@@ -86,7 +86,6 @@ body {
 
 .topnav-ul {
   width: 40%;
-  padding-right: 5% !important;
 }
 
 .topnav-item:hover {
@@ -107,6 +106,14 @@ body {
 .sub-heading {
   border: 1px solid #e7e7e7;
   max-width: 50rem;
+}
+
+.sub-heading-home {
+  background-color: #e7e7e7;
+}
+
+.sub-heading-about {
+  background-color: white;
 }
 
 .about-container {
@@ -478,6 +485,10 @@ body {
 
   .links-container {
     margin-right: 4rem;
+  }
+
+  .topnav {
+    padding-right: 6.3rem !important;
   }
 }
 
