@@ -5,7 +5,7 @@ class header extends HTMLElement {
   connectedCallback() {
     const {links: linksM} = this.attributes;
     const links = linksM.value.split(',');
-
+    const mainLink = links[0] == 'home' ? 'index': links[0];
     const aLinks = links.map((link, i) => {
       if (i > 0) {
         return `<li class="mx-4">
@@ -40,7 +40,7 @@ class header extends HTMLElement {
         <a
           class="disable-default-link text-capitalize header-link"
           aria-current="page"
-          href="${links[0]}.html"
+          href="${mainLink}.html"
           >${links[0]}</a
         >
       </li>
