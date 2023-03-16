@@ -3,7 +3,7 @@
 
 /* eslint-disable */
 
-import { createFooter, createHeader } from "./shared.js";
+import { createFooter, createHeader, isSmallScreen } from "./shared.js";
 
 const programData = [
   {
@@ -129,11 +129,13 @@ customElements.define("featured-card", featuredCard);
 
 const featuredContainer = document.querySelector(".featured-cards");
 const programContainer = document.querySelector(".program-container");
+const partnerContainer = document.querySelector(".partner");
 
+let isScreenCurrentlyMedium;
 let isScreenCurrentlySmall;
 let moreIsSeen;
 
-const isSmallScreen = () => {
+const isMediumScreen = () => {
   const screenSize = document.documentElement.clientWidth || window.innerWidth;
   if (screenSize < 992) {
     return true;
@@ -164,7 +166,7 @@ const populateFeatured = () => {
     featuredContainer.insertAdjacentElement("beforeend", btnEl);
   };
 
-  if (isSmallScreen()) {
+  if (isMediumScreen()) {
     generateFeaturedCards(1);
 
     const lastBtn = document.createElement("button");
@@ -173,9 +175,10 @@ const populateFeatured = () => {
       lastBtnClickHandler(false, lastBtn);
     };
     lastBtnClickHandler(true, lastBtn);
+    isScreenCurrentlyMedium = true;
   } else {
     generateFeaturedCards();
-    isScreenCurrentlySmall = false;
+    isScreenCurrentlyMedium = false;
   }
 };
 
@@ -200,7 +203,13 @@ const generateFeaturedCards = (end = featuredData.length - 1, start = 0) => {
 
 const main = () => {
   createHeader(["about", "program", "guests", "partner"]);
-  createFooter();
+
+  if (!isSmallScreen()) {
+    createFooter(true, true);
+    isScreenCurrentlySmall = false;
+  } else {
+    isScreenCurrentlySmall = true;
+  }
 
   for (const [i, program] of programData.entries()) {
     const { title, imgSrc, description } = program;
@@ -233,13 +242,25 @@ const main = () => {
 main();
 
 window.onresize = () => {
-  if (isSmallScreen() && !isScreenCurrentlySmall) {
+  if (isMediumScreen() && !isScreenCurrentlyMedium) {
     featuredContainer.innerHTML = "";
     populateFeatured();
+    isScreenCurrentlyMedium = true;
+  } else if (!isMediumScreen() && isScreenCurrentlyMedium) {
+    featuredContainer.innerHTML = "";
+    populateFeatured();
+    isScreenCurrentlyMedium = false;
+  }
+
+  if (isSmallScreen() && !isScreenCurrentlySmall) {
+    const mainFooter = document.querySelector(".main-footer");
+    if (mainFooter) {
+      mainFooter.remove();
+    }
+    partnerContainer.innerHTML = "";
     isScreenCurrentlySmall = true;
   } else if (!isSmallScreen() && isScreenCurrentlySmall) {
-    featuredContainer.innerHTML = "";
-    populateFeatured();
+    createFooter(true, true);
     isScreenCurrentlySmall = false;
   }
 };

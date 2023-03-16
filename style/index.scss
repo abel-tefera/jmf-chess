@@ -167,7 +167,7 @@ body {
 }
 
 .partner {
-  background-color: $c-background;
+  background-color: $c-secondary;
 }
 
 .featured-flex {
@@ -262,14 +262,11 @@ body {
     rgb(58 56 56 / 62.3%) 0%,
     rgb(31 31 31) 100%
   );
+  border: 1px solid $c-secondary;
   position: relative;
   cursor: pointer;
   transition: all 0.3s;
   opacity: 0.9;
-}
-
-.content-card:hover {
-  transform: scale(0.9);
 }
 
 .footer-p {
@@ -425,6 +422,7 @@ body {
 
   .content-card:hover {
     transform: scale(1.1);
+    border: 1px solid $c-background;
   }
 
   .main-header {

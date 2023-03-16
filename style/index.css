@@ -36,7 +36,7 @@ body {
 }
 
 .mobile-width {
-  width: 90%;
+  width: 60%;
 }
 
 .main-bg::before {
@@ -157,7 +157,7 @@ body {
 }
 
 .partner {
-  background-color: #e7e7e7;
+  background-color: #272a31;
 }
 
 .featured-flex {
@@ -245,14 +245,11 @@ body {
 
 .content-card {
   background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
+  border: 1px solid #272a31;
   position: relative;
   cursor: pointer;
   transition: all 0.3s;
   opacity: 0.9;
-}
-
-.content-card:hover {
-  transform: scale(0.9);
 }
 
 .footer-p {
@@ -399,6 +396,7 @@ body {
   }
   .content-card:hover {
     transform: scale(1.1);
+    border: 1px solid #e7e7e7;
   }
   .main-header {
     justify-content: space-between;

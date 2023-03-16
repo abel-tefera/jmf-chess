@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 /* eslint-disable */
-export class header extends HTMLElement {
+class header extends HTMLElement {
   connectedCallback() {
     const { links: linksM } = this.attributes;
     const links = linksM.value.split(",");
@@ -55,7 +55,7 @@ export class header extends HTMLElement {
   }
 }
 
-export class footer extends HTMLElement {
+class footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<div class="container-fluid">
       <div class="w-100 d-flex flex-row py-5 mx-auto justify-content-center">
@@ -75,8 +75,35 @@ export class footer extends HTMLElement {
   }
 }
 
+class partner extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `<p class="align-self-center mt-5 mb-2 h1 text-white">Partner</p>
+    <hr class="align-self-center red-hr" />
+    <div
+      class="d-flex flex-row partner-imgs align-items-center align-self-center"
+    >
+      <div class="featured-flex">
+        <img src="assets/mozilla.svg" />
+      </div>
+      <div class="featured-flex">
+        <img src="assets/google.svg" />
+      </div>
+      <div class="featured-flex">
+        <img src="assets/mozilla.svg" />
+      </div>
+      <div class="featured-flex">
+        <img src="assets/google.svg" />
+      </div>
+      <div class="featured-flex">
+        <img src="assets/mozilla.svg" />
+      </div>
+    </div>`;
+  }
+}
+
 customElements.define("header-nav", header);
 customElements.define("custom-footer", footer);
+customElements.define("partner-footer", partner);
 
 const showMobileMenu = () => {
   const burger = document.querySelector(".hamburger-container");
@@ -141,11 +168,29 @@ export const createHeader = (links) => {
   document.body.insertAdjacentElement("afterbegin", mobileOverlay);
 };
 
-export const createFooter = (bg) => {
-  const footer = document.createElement("footer");
-  if (bg) {
-    footer.classList.add("footer-dark", "text-white");
+export const createFooter = (showPartner, createFooter, bg) => {
+  if (showPartner) {
+    const partnerSection = document.querySelector(".partner");
+    const partnerDiv = document.createElement("div");
+    partnerDiv.innerHTML = `<partner-footer class="container-md d-flex flex-column"></partner-footer>`;
+    partnerSection.appendChild(partnerDiv);
   }
-  footer.innerHTML = `<custom-footer></custom-footer>`;
-  document.body.insertAdjacentElement("beforeend", footer);
+
+  if (createFooter) {
+    const footer = document.createElement("footer");
+    footer.classList.add("main-footer");
+    if (bg) {
+      footer.classList.add("footer-dark", "text-white");
+    }
+    footer.innerHTML = `<custom-footer></custom-footer>`;
+    document.body.insertAdjacentElement("beforeend", footer);
+  }
+};
+
+export const isSmallScreen = () => {
+  const screenSize = document.documentElement.clientWidth || window.innerWidth;
+  if (screenSize < 768) {
+    return true;
+  }
+  return false;
 };
