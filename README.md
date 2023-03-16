@@ -4,7 +4,7 @@
 
   <br/>
 
-  <h3><b>HTML/CSS Capstone Project</b></h3>
+  <h3><b>JMF Chess Tournament Website</b></h3>
 
 </div>
 
@@ -15,6 +15,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [Video Presentation](#video-presentation)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -86,7 +87,10 @@
 
 > Here's the link to my project: 
 
- - [Coming Soon]()
+ - [JMF Chess Tournament](https://abel-tefera.github.io/html-css-capstone/)
+
+ ## 🚀 Video Presentation <a name="video-presentation"></a>
+ Click on this [Loom Video](https://www.loom.com/share/e4d0c283b6684e4e8f596ea5a82bf026) to view the video walkthrough of this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
