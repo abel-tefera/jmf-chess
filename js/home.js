@@ -1,38 +1,36 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable no-unused-vars */
 
-/* eslint-disable */
-
-import { createFooter, createHeader, isSmallScreen } from "./shared.js";
+import {createFooter, createHeader, isSmallScreen} from './shared.js';
 
 const programData = [
   {
-    title: "Play",
-    imgSrc: "assets/pawn.png",
+    title: 'Play',
+    imgSrc: 'assets/pawn.png',
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
     harum odit saepe corrupti repudiandae vel.`,
   },
   {
-    title: "Learn",
-    imgSrc: "assets/horse.png",
+    title: 'Learn',
+    imgSrc: 'assets/horse.png',
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
     harum odit saepe corrupti repudiandae vel.`,
   },
   {
-    title: "Tactics",
-    imgSrc: "assets/chess-board.png",
+    title: 'Tactics',
+    imgSrc: 'assets/chess-board.png',
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
     harum odit saepe corrupti repudiandae vel.`,
   },
   {
-    title: "Check",
-    imgSrc: "assets/queen.png",
+    title: 'Check',
+    imgSrc: 'assets/queen.png',
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
     harum odit saepe corrupti repudiandae vel.`,
   },
   {
-    title: "Mate",
-    imgSrc: "assets/king.png",
+    title: 'Mate',
+    imgSrc: 'assets/king.png',
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
     harum odit saepe corrupti repudiandae vel.`,
   },
@@ -40,52 +38,53 @@ const programData = [
 
 const featuredData = [
   {
-    featuredName: "Magnus Carlsen",
-    featuredSub: "GM | Norway",
+    featuredName: 'Magnus Carlsen',
+    featuredSub: 'GM | Norway',
     featuredDesc: `GM Magnus Carlsen is the current world chess champion. 
     To many people, he\`s the best to ever play the game.`,
-    featuredImgSrc: "assets/magnus.jpeg",
+    featuredImgSrc: 'assets/magnus.jpeg',
   },
   {
     featuredName: 'Ian "Nepo"',
-    featuredSub: "GM | Russia",
+    featuredSub: 'GM | Russia',
     featuredDesc: `GM Ian Nepomniachtchi is a Russian super grandmaster 
     who won the \`21 Candidates Tournament.
     `,
-    featuredImgSrc: "assets/Ian.png",
+    featuredImgSrc: 'assets/Ian.png',
   },
   {
-    featuredName: "Ding Liren",
-    featuredSub: "GM | China",
+    featuredName: 'Ding Liren',
+    featuredSub: 'GM | China',
     featuredDesc: `Ding Liren is a Chinese super grandmaster 
     who will play against GM Ian Nepo in the \`23 World Championship.`,
-    featuredImgSrc: "assets/ding.png",
+    featuredImgSrc: 'assets/ding.png',
   },
   {
-    featuredName: "Alireza Firouzja",
-    featuredSub: "GM | France",
+    featuredName: 'Alireza Firouzja',
+    featuredSub: 'GM | France',
     featuredDesc: `Alireza Firouzja is a world championship candidate 
     and two-time Iranian champion.`,
-    featuredImgSrc: "assets/alireza.png",
+    featuredImgSrc: 'assets/alireza.png',
   },
   {
-    featuredName: "Hikaru Nakamura",
-    featuredSub: "GM | United States",
-    featuredDesc: `Born in Hirakata, Japan, Nakamura has been one of the world\`s 
-    top players for well over a decade.`,
-    featuredImgSrc: "assets/naka.png",
+    featuredName: 'Hikaru Nakamura',
+    featuredSub: 'GM | United States',
+    featuredDesc: `Born in Hirakata, Japan, Nakamura has 
+    been one of the world\`s top players for well over a decade.`,
+    featuredImgSrc: 'assets/naka.png',
   },
   {
-    featuredName: "Anish Giri",
-    featuredSub: "GM | Netherlands",
-    featuredDesc: `GM Anish Giri is a four-time Dutch champion and a world-class player.`,
-    featuredImgSrc: "assets/giri.jpeg",
+    featuredName: 'Anish Giri',
+    featuredSub: 'GM | Netherlands',
+    featuredDesc: `GM Anish Giri is a four-time Dutch champion and 
+    a world-class player.`,
+    featuredImgSrc: 'assets/giri.jpeg',
   },
 ];
 
 class programCard extends HTMLElement {
   connectedCallback() {
-    const { title, imgSrc, description } = this.attributes;
+    const {title, imgSrc, description} = this.attributes;
     this.innerHTML = `<div
           class="d-flex flex-md-column align-items-center program-content"
         >
@@ -101,7 +100,7 @@ class programCard extends HTMLElement {
 
 class featuredCard extends HTMLElement {
   connectedCallback() {
-    const { featuredName, featuredSub, featuredDesc, featuredImgSrc } =
+    const {featuredName, featuredSub, featuredDesc, featuredImgSrc} =
       this.attributes;
 
     this.innerHTML = `<div
@@ -124,12 +123,12 @@ class featuredCard extends HTMLElement {
   }
 }
 
-customElements.define("program-card", programCard);
-customElements.define("featured-card", featuredCard);
+customElements.define('program-card', programCard);
+customElements.define('featured-card', featuredCard);
 
-const featuredContainer = document.querySelector(".featured-cards");
-const programContainer = document.querySelector(".program-container");
-const partnerContainer = document.querySelector(".partner");
+const featuredContainer = document.querySelector('.featured-cards');
+const programContainer = document.querySelector('.program-container');
+const partnerContainer = document.querySelector('.partner');
 
 let isScreenCurrentlyMedium;
 let isScreenCurrentlySmall;
@@ -149,27 +148,27 @@ const populateFeatured = () => {
       if (!init) {
         generateFeaturedCards(featuredData.length - 1, 2);
         moreIsSeen = true;
-        btnEl.innerHTML = "Less";
-        btnEl.classList.add("see-less-btn");
+        btnEl.innerHTML = 'Less';
+        btnEl.classList.add('see-less-btn');
       } else {
-        btnEl.classList.add("w-75", "see-more-btn", "p-3");
-        btnEl.setAttribute("type", "button");
-        btnEl.innerHTML = "More";
+        btnEl.classList.add('w-75', 'see-more-btn', 'p-3');
+        btnEl.setAttribute('type', 'button');
+        btnEl.innerHTML = 'More';
       }
     } else if (moreIsSeen) {
-      featuredContainer.innerHTML = "";
+      featuredContainer.innerHTML = '';
       generateFeaturedCards(1);
       moreIsSeen = false;
-      btnEl.classList.remove("see-less-btn");
-      btnEl.innerHTML = "More";
+      btnEl.classList.remove('see-less-btn');
+      btnEl.innerHTML = 'More';
     }
-    featuredContainer.insertAdjacentElement("beforeend", btnEl);
+    featuredContainer.insertAdjacentElement('beforeend', btnEl);
   };
 
   if (isMediumScreen()) {
     generateFeaturedCards(1);
 
-    const lastBtn = document.createElement("button");
+    const lastBtn = document.createElement('button');
 
     lastBtn.onclick = () => {
       lastBtnClickHandler(false, lastBtn);
@@ -184,10 +183,10 @@ const populateFeatured = () => {
 
 const generateFeaturedCards = (end = featuredData.length - 1, start = 0) => {
   for (let i = start; i <= end; i++) {
-    const { featuredName, featuredSub, featuredDesc, featuredImgSrc } =
+    const {featuredName, featuredSub, featuredDesc, featuredImgSrc} =
       featuredData[i];
-    const featuredItem = document.createElement("div");
-    featuredItem.classList.add("col-lg-6", "col-sm-11", "col-md-9", "my-4");
+    const featuredItem = document.createElement('div');
+    featuredItem.classList.add('col-lg-6', 'col-sm-11', 'col-md-9', 'my-4');
     featuredItem.innerHTML = `<featured-card
     i='${i}'
     featuredName='${featuredName}'
@@ -202,7 +201,7 @@ const generateFeaturedCards = (end = featuredData.length - 1, start = 0) => {
 };
 
 const main = () => {
-  createHeader(["about", "program", "guests", "partner"]);
+  createHeader(['about', 'program', 'guests', 'partner']);
 
   if (!isSmallScreen()) {
     createFooter(true, true);
@@ -212,18 +211,18 @@ const main = () => {
   }
 
   for (const [i, program] of programData.entries()) {
-    const { title, imgSrc, description } = program;
-    const programItem = document.createElement("div");
+    const {title, imgSrc, description} = program;
+    const programItem = document.createElement('div');
     programItem.classList.add(
-      "col-11",
-      "col-md-3",
-      "col-lg-2",
-      "mx-md-1",
-      "mx-lg-auto",
-      "content-card",
-      "align-self-center",
-      "p-3",
-      "my-3"
+        'col-11',
+        'col-md-3',
+        'col-lg-2',
+        'mx-md-1',
+        'mx-lg-auto',
+        'content-card',
+        'align-self-center',
+        'p-3',
+        'my-3',
     );
     programItem.innerHTML = `<program-card
     i='${i}'
@@ -243,21 +242,21 @@ main();
 
 window.onresize = () => {
   if (isMediumScreen() && !isScreenCurrentlyMedium) {
-    featuredContainer.innerHTML = "";
+    featuredContainer.innerHTML = '';
     populateFeatured();
     isScreenCurrentlyMedium = true;
   } else if (!isMediumScreen() && isScreenCurrentlyMedium) {
-    featuredContainer.innerHTML = "";
+    featuredContainer.innerHTML = '';
     populateFeatured();
     isScreenCurrentlyMedium = false;
   }
 
   if (isSmallScreen() && !isScreenCurrentlySmall) {
-    const mainFooter = document.querySelector(".main-footer");
+    const mainFooter = document.querySelector('.main-footer');
     if (mainFooter) {
       mainFooter.remove();
     }
-    partnerContainer.innerHTML = "";
+    partnerContainer.innerHTML = '';
     isScreenCurrentlySmall = true;
   } else if (!isSmallScreen() && isScreenCurrentlySmall) {
     createFooter(true, true);

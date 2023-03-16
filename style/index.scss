@@ -61,7 +61,6 @@ body {
   filter: opacity(0.2);
   background-position-x: center;
   overflow-y: hidden;
-  // background-position-y: -9rem;
 }
 
 .logo {
@@ -87,8 +86,6 @@ body {
   background: rgb(233 60 42);
   background: url("../assets/abstract-2.jpg");
   background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
@@ -224,7 +221,6 @@ body {
 
 .past-event-divs {
   position: relative;
-
   place-content: center;
 
   h2 {
@@ -284,9 +280,9 @@ body {
   position: absolute;
   width: 1rem;
   top: 0;
+  background: url("../assets/drop-icon-down.svg");
   background-color: red;
   height: 100%;
-  background: url("../assets/drop-icon-down.svg");
   z-index: 5;
   background-repeat: no-repeat;
   background-position: center;
@@ -337,7 +333,7 @@ body {
   height: 0;
   width: 0;
   position: fixed;
-  background-color: hsla(6, 100%, 59%, 0.7);
+  background-color: hsla(6deg, 100%, 59%, 0.7);
   z-index: 2;
   left: 0;
   top: 0;
