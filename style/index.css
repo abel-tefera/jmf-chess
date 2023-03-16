@@ -36,6 +36,10 @@ body {
   width: 60%;
 }
 
+.w-40 {
+  width: 40%;
+}
+
 .mobile-width {
   width: 60%;
 }
@@ -74,9 +78,24 @@ body {
   color: inherit;
 }
 
+.topnav {
+  background-color: #272a31;
+  height: 1.875rem;
+  opacity: 0.9;
+}
+
+.topnav-ul {
+  width: 40%;
+  padding-right: 5% !important;
+}
+
+.topnav-item:hover {
+  opacity: 0.7;
+}
+
 .heading-sub {
   font-weight: 600;
-  background: url("../assets/abstract-2.jpg");
+  background: linear-gradient(45deg, rgba(255, 25, 31, 0.6), rgba(187, 10, 15, 0.7), rgba(236, 82, 66, 0.8)), url("../assets/abstract-2.jpg");
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -86,9 +105,12 @@ body {
 }
 
 .sub-heading {
-  border: 1px solid white;
-  background-color: #e7e7e7;
+  border: 1px solid #e7e7e7;
   max-width: 50rem;
+}
+
+.about-container {
+  background-color: #F7F7F7;
 }
 
 .card-img {
@@ -193,6 +215,7 @@ body {
 
 .about-header {
   color: #ec5242;
+  font-size: 2.5rem;
 }
 
 .about-logo {
@@ -400,6 +423,10 @@ body {
   .custom-nav {
     flex-basis: content !important;
     justify-content: end;
+  }
+
+  .about-header {
+    font-size: 3rem;
   }
 
   .content-card:hover {

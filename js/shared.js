@@ -5,7 +5,7 @@ class header extends HTMLElement {
   connectedCallback() {
     const {links: linksM} = this.attributes;
     const links = linksM.value.split(',');
-    const mainLink = links[0] == 'home' ? 'index': links[0];
+    const mainLink = links[0] == 'home' ? 'index' : links[0];
     const aLinks = links.map((link, i) => {
       if (i > 0) {
         return `<li class="mx-4">
@@ -125,50 +125,80 @@ const closeMobileMenu = () => {
   menu.style.height = '0';
 };
 
-export const createHeader = (links) => {
-  const header = document.createElement('header');
-  header.classList.add('main-header', 'px-2');
-  header.innerHTML = `<header-nav
-  style="display: contents"
-  links=${links}
-  ></header-nav>`;
+export const createHeader = (links, haveTopNav = false) => {
+  if (links !== null) {
+    const header = document.createElement('header');
+    header.classList.add('main-header', 'px-2');
+    header.innerHTML = `<header-nav
+    style="display: contents"
+    links=${links}
+    ></header-nav>`;
 
-  const mobileLinks = links.map((link, i) => {
-    if (i > 0) {
-      return `<a href="#${link}" class="mobile-link text-capitalize">
-      ${link}</a>`;
-    } else {
-      return `<a href="${link}.html" class="mobile-link text-capitalize">
-      ${link}</a>`;
+    const mobileLinks = links.map((link, i) => {
+      const mainLink = link == 'home' ? 'index' : link;
+      if (i > 0) {
+        return `<a href="#${link}" class="mobile-link text-capitalize">
+        ${link}</a>`;
+      } else {
+        return `<a href="${mainLink}.html" class="mobile-link text-capitalize">
+        ${link}</a>`;
+      }
+    });
+
+    const mobileLinksMK = mobileLinks.join('\n');
+
+    document.body.insertAdjacentElement('afterbegin', header);
+
+    const burger = document.querySelector('.hamburger-container');
+
+    burger.addEventListener('click', () => {
+      if (burger.classList.contains('change')) {
+        closeMobileMenu();
+      } else {
+        showMobileMenu();
+        const aMobileLink = document.querySelectorAll('.mobile-link');
+        aMobileLink.forEach((link) => {
+          link.addEventListener('click', closeMobileMenu);
+        });
+      }
+    });
+
+    const mobileOverlay = document.createElement('div');
+    mobileOverlay.classList.add('mobile-overlay');
+    mobileOverlay.setAttribute('id', 'mobile-menu');
+    mobileOverlay.innerHTML = `
+      <div class="overlay-content d-flex flex-column">
+      ${mobileLinksMK}
+      </div>`;
+    document.body.insertAdjacentElement('afterbegin', mobileOverlay);
+  }
+
+  if (haveTopNav) {
+    const topNav = document.createElement('div');
+    topNav.classList.add(
+        'topnav',
+        'd-flex',
+        'align-content-center',
+        'justify-content-end',
+    );
+    topNav.innerHTML = `<ul class="topnav-ul disable-default m-0 p-0 d-flex 
+    justify-content-between align-items-center w-50">
+    <li><i class="fab fa-facebook-f text-white topnav-item"></i></li>
+    <li><i class="fab fa-twitter text-white topnav-item"></i></li>
+    <li><a href="#" class="logout text-white topnav-item 
+    disable-default-link">Logout</a></li>
+    <li><a href="#" class="mypage text-white topnav-item 
+    disable-default-link">Mypage</a></li>
+    <li><a href="#" class="korean text-white topnav-item 
+    disable-default-link">Korean</a></li>
+  </ul>`;
+    document.body.insertAdjacentElement('afterbegin', topNav);
+  } else {
+    const topNav = document.querySelector('.topnav');
+    if (topNav) {
+      topNav.remove();
     }
-  });
-
-  const mobileLinksMK = mobileLinks.join('\n');
-
-  document.body.insertAdjacentElement('afterbegin', header);
-
-  const burger = document.querySelector('.hamburger-container');
-
-  burger.addEventListener('click', () => {
-    if (burger.classList.contains('change')) {
-      closeMobileMenu();
-    } else {
-      showMobileMenu();
-      const aMobileLink = document.querySelectorAll('.mobile-link');
-      aMobileLink.forEach((link) => {
-        link.addEventListener('click', closeMobileMenu);
-      });
-    }
-  });
-
-  const mobileOverlay = document.createElement('div');
-  mobileOverlay.classList.add('mobile-overlay');
-  mobileOverlay.setAttribute('id', 'mobile-menu');
-  mobileOverlay.innerHTML = `
-    <div class="overlay-content d-flex flex-column">
-    ${mobileLinksMK}
-    </div>`;
-  document.body.insertAdjacentElement('afterbegin', mobileOverlay);
+  }
 };
 
 export const createFooter = (showPartner, createFooter, bg) => {

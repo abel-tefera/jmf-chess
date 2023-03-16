@@ -201,13 +201,14 @@ const generateFeaturedCards = (end = featuredData.length - 1, start = 0) => {
 };
 
 const main = () => {
-  createHeader(['about', 'program', 'guests', 'partner']);
-
+  const links = ['about', 'program', 'guests', 'partner'];
   if (!isSmallScreen()) {
+    createHeader(links, true);
     createFooter(true, true);
     isScreenCurrentlySmall = false;
   } else {
     isScreenCurrentlySmall = true;
+    createHeader(links);
   }
 
   for (const [i, program] of programData.entries()) {
@@ -252,6 +253,7 @@ window.onresize = () => {
   }
 
   if (isSmallScreen() && !isScreenCurrentlySmall) {
+    createHeader(null, false);
     const mainFooter = document.querySelector('.main-footer');
     if (mainFooter) {
       mainFooter.remove();
@@ -259,6 +261,7 @@ window.onresize = () => {
     partnerContainer.innerHTML = '';
     isScreenCurrentlySmall = true;
   } else if (!isSmallScreen() && isScreenCurrentlySmall) {
+    createHeader(null, true);
     createFooter(true, true);
     isScreenCurrentlySmall = false;
   }
