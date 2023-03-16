@@ -9,7 +9,7 @@ $c-primary-bright: #ff432f;
 $c-secondary: #272a31;
 $c-secondary-grey: #808080;
 $c-background: #e7e7e7;
-$c-background-light: #F7F7F7;
+$c-background-light: #f7f7f7;
 $c-chess-com: #769656;
 
 * {
@@ -46,7 +46,7 @@ body {
 }
 
 .w-40 {
-  width: 40%
+  width: 40%;
 }
 
 .mobile-width {
@@ -105,11 +105,12 @@ body {
 .heading-sub {
   font-weight: 600;
   background: linear-gradient(
-      45deg,
-      rgba(255, 25, 31, 0.6),
-      rgba(187, 10, 15, 0.7),
-      rgba(236, 82, 66, 0.8)
-    ), url("../assets/abstract-2.jpg");
+    45deg,
+    rgba(255, 25, 31, 0.6),
+    rgba(187, 10, 15, 0.7),
+    rgba(236, 82, 66, 0.8)
+    ), 
+  url("../assets/abstract-2.jpg");
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -190,10 +191,10 @@ body {
   height: 4rem;
   z-index: -1;
   background: repeating-conic-gradient(
-      $c-secondary-grey 0% 25%,
-      transparent 0% 50%
-    )
-    50% / 1rem 1rem;
+    $c-secondary-grey 0% 25%,
+    transparent 0% 50%
+  )
+  50% / 1rem 1rem;
 }
 
 .partner {
