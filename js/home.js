@@ -7,32 +7,37 @@ const programData = [
   {
     title: 'Play',
     imgSrc: 'assets/pawn.png',
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-    harum odit saepe corrupti repudiandae vel.`,
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Laudantium id perspiciatis ipsum!
+`,
   },
   {
     title: 'Learn',
     imgSrc: 'assets/horse.png',
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-    harum odit saepe corrupti repudiandae vel.`,
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Laudantium id perspiciatis ipsum!
+`,
   },
   {
     title: 'Tactics',
     imgSrc: 'assets/chess-board.png',
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-    harum odit saepe corrupti repudiandae vel.`,
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Laudantium id perspiciatis ipsum!
+`,
   },
   {
     title: 'Check',
     imgSrc: 'assets/queen.png',
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-    harum odit saepe corrupti repudiandae vel.`,
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Laudantium id perspiciatis ipsum!
+`,
   },
   {
     title: 'Mate',
     imgSrc: 'assets/king.png',
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-    harum odit saepe corrupti repudiandae vel.`,
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Laudantium id perspiciatis ipsum!
+`,
   },
 ];
 
@@ -91,7 +96,7 @@ class programCard extends HTMLElement {
           <img src="${imgSrc.value}" class="card-img mx-2 mx-md-0" />
           <p class="card-title fs-4 fw-bolder mx-2 mx-md-0 my-1 text-md-center">
           ${title.value}</p>
-          <p class="card-subtitle fs-6 mx-2 mx-md-0">
+          <p class="card-subtitle fs-6 mx-0">
             ${description.value}
           </p>
         </div>`;
@@ -216,10 +221,8 @@ const main = () => {
     const programItem = document.createElement('div');
     programItem.classList.add(
         'col-11',
-        'col-md-3',
+        'col-md-4',
         'col-lg-2',
-        'mx-md-1',
-        'mx-lg-auto',
         'content-card',
         'align-self-center',
         'p-3',

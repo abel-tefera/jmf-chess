@@ -305,6 +305,8 @@ body {
   cursor: pointer;
   transition: all 0.3s;
   opacity: 0.9;
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
 .footer-p {
@@ -423,6 +425,7 @@ body {
   aspect-ratio: 16 / 9;
 }
 
+
 @media only screen and (max-width: 768px) {
   .links-container {
     display: none !important;
@@ -460,7 +463,6 @@ body {
   }
 
   .content-card:hover {
-    transform: scale(1.1);
     border: 1px solid $c-background;
   }
 
@@ -496,10 +498,6 @@ body {
 @media only screen and (min-width: 992px) {
   .partner-imgs {
     width: 75%;
-  }
-
-  .content-card:hover {
-    transform: scale(1.2);
   }
 
   .logo {

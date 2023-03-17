@@ -282,6 +282,8 @@ body {
   cursor: pointer;
   transition: all 0.3s;
   opacity: 0.9;
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
 .footer-p {
@@ -437,7 +439,6 @@ body {
   }
 
   .content-card:hover {
-    transform: scale(1.1);
     border: 1px solid #e7e7e7;
   }
 
@@ -473,10 +474,6 @@ body {
 @media only screen and (min-width: 992px) {
   .partner-imgs {
     width: 75%;
-  }
-
-  .content-card:hover {
-    transform: scale(1.2);
   }
 
   .logo {
