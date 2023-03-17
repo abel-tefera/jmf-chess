@@ -29,7 +29,7 @@ class header extends HTMLElement {
     </div>
   </nav>
   <a class="logo-link ps-md-5 ms-md-5">
-  <img class="logo" src="assets/apple.svg" /></a>
+  <img class="logo" src="assets/main-icon.svg" /></a>
 
   <div
     class="links-container container-fluid 

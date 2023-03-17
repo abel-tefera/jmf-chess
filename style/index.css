@@ -60,10 +60,6 @@ body {
   overflow-y: hidden;
 }
 
-.logo {
-  width: 2rem;
-}
-
 .disable-default {
   list-style-type: none;
   padding: 0;
@@ -246,11 +242,9 @@ body {
   position: relative;
   place-content: center;
 }
-
 .past-event-divs h2 {
   z-index: 2;
 }
-
 .past-event-divs h5 {
   z-index: 2;
 }
@@ -353,7 +347,7 @@ body {
   height: 0;
   width: 0;
   position: fixed;
-  background-color: hsla(6deg, 100%, 59%, 0.7);
+  background-color: hsla(6, 100%, 59%, 0.7);
   z-index: 2;
   left: 0;
   top: 0;
@@ -406,91 +400,77 @@ body {
   .links-container {
     display: none !important;
   }
-
   .logo-link {
     display: none !important;
   }
-
   .see-prog-div {
     display: none !important;
   }
 }
-
 @media only screen and (min-width: 768px) {
+  .logo {
+    width: 4rem;
+  }
   .card-subtitle {
     text-align: center;
   }
-
   .featured-cards {
     width: 80%;
   }
-
   .featured-flex {
     flex: 20%;
   }
-
   .custom-nav {
     flex-basis: content !important;
     justify-content: end;
   }
-
   .about-header {
     font-size: 3rem;
   }
-
   .content-card:hover {
     border: 1px solid #e7e7e7;
   }
-
   .main-header {
     justify-content: space-between;
     flex-wrap: nowrap;
     height: 6rem;
     position: inherit;
   }
-
   .hamburger {
     display: none;
   }
-
   .join-div {
     display: none;
   }
-
   .links-container {
     display: flex;
   }
-
   .header-link:hover {
     color: #ec5242;
     transition: color 0.25s;
   }
-
   .mobile-width {
     width: 75%;
   }
 }
-
 @media only screen and (min-width: 992px) {
   .partner-imgs {
     width: 75%;
   }
-
   .logo {
     margin-left: 4rem;
   }
-
   .links-container {
     margin-right: 4rem;
   }
-
   .topnav {
     padding-right: 6.3rem !important;
   }
 }
-
 @media only screen and (min-width: 1200px) {
   .main-bg::before {
     background-position-y: -16rem;
   }
 }
+
+/*# sourceMappingURL=index.css.map */

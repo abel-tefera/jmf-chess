@@ -69,10 +69,6 @@ body {
   overflow-y: hidden;
 }
 
-.logo {
-  width: 2rem;
-}
-
 .disable-default {
   list-style-type: none;
   padding: 0;
@@ -441,6 +437,10 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+  .logo {
+    width: 4rem;
+  }
+  
   .card-subtitle {
     text-align: center;
   }
