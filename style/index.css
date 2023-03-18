@@ -25,7 +25,7 @@ body {
 
 .main-bg {
   position: relative;
-  margin-top: 6rem;
+  background-color: #f7f7f7;
 }
 
 .w-90 {
@@ -42,22 +42,6 @@ body {
 
 .mobile-width {
   width: 60%;
-}
-
-.main-bg::before {
-  content: "";
-  position: absolute;
-  height: 125%;
-  width: 100%;
-  top: -3rem;
-  background: url("../assets/chess-bg.svg");
-  z-index: -1;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  filter: opacity(0.2);
-  background-position-x: center;
-  overflow-y: hidden;
 }
 
 .disable-default {
@@ -273,7 +257,6 @@ body {
   background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
   border: 1px solid #272a31;
   position: relative;
-  cursor: pointer;
   transition: all 0.3s;
   opacity: 0.9;
   margin-left: 1px;
@@ -396,6 +379,27 @@ body {
   aspect-ratio: 16/9;
 }
 
+@media only screen and (min-width: 576px) {
+  .main-bg {
+    position: relative;
+    background-color: initial;
+  }
+  .main-bg::before {
+    content: "";
+    position: absolute;
+    height: 125%;
+    width: 100%;
+    top: -3rem;
+    background: url("../assets/chess-bg.svg");
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: opacity(0.2);
+    background-position-x: center;
+    overflow-y: hidden;
+  }
+}
 @media only screen and (max-width: 768px) {
   .links-container {
     display: none !important;
@@ -435,6 +439,7 @@ body {
     flex-wrap: nowrap;
     height: 6rem;
     position: inherit;
+    background-color: white;
   }
   .hamburger {
     display: none;

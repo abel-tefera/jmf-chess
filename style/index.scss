@@ -34,7 +34,7 @@ body {
 
 .main-bg {
   position: relative;
-  margin-top: 6rem;
+  background-color: $c-background-light;
 }
 
 .w-90 {
@@ -51,22 +51,6 @@ body {
 
 .mobile-width {
   width: 60%;
-}
-
-.main-bg::before {
-  content: "";
-  position: absolute;
-  height: 125%;
-  width: 100%;
-  top: -3rem;
-  background: url("../assets/chess-bg.svg");
-  z-index: -1;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  filter: opacity(0.2);
-  background-position-x: center;
-  overflow-y: hidden;
 }
 
 .disable-default {
@@ -100,11 +84,11 @@ body {
 .heading-sub {
   font-weight: 600;
   background: linear-gradient(
-    45deg,
-    rgba(255, 25, 31, 0.6),
-    rgba(187, 10, 15, 0.7),
-    rgba(236, 82, 66, 0.8)
-  ),
+      45deg,
+      rgba(255, 25, 31, 0.6),
+      rgba(187, 10, 15, 0.7),
+      rgba(236, 82, 66, 0.8)
+    ),
     url("../assets/abstract-2.jpg");
   background-size: 100%;
   -webkit-background-clip: text;
@@ -194,9 +178,9 @@ body {
   height: 4rem;
   z-index: -1;
   background: repeating-conic-gradient(
-    $c-secondary-grey 0% 25%,
-    transparent 0% 50%
-  )
+      $c-secondary-grey 0% 25%,
+      transparent 0% 50%
+    )
     50% / 1rem 1rem;
 }
 
@@ -298,7 +282,6 @@ body {
   );
   border: 1px solid $c-secondary;
   position: relative;
-  cursor: pointer;
   transition: all 0.3s;
   opacity: 0.9;
   margin-left: 1px;
@@ -421,6 +404,28 @@ body {
   aspect-ratio: 16 / 9;
 }
 
+@media only screen and (min-width: 576px) {
+  .main-bg {
+    position: relative;
+    background-color: initial;
+  }
+
+  .main-bg::before {
+    content: "";
+    position: absolute;
+    height: 125%;
+    width: 100%;
+    top: -3rem;
+    background: url("../assets/chess-bg.svg");
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: opacity(0.2);
+    background-position-x: center;
+    overflow-y: hidden;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .links-container {
@@ -440,7 +445,7 @@ body {
   .logo {
     width: 4rem;
   }
-  
+
   .card-subtitle {
     text-align: center;
   }
@@ -471,6 +476,7 @@ body {
     flex-wrap: nowrap;
     height: 6rem;
     position: inherit;
+    background-color: white;
   }
 
   .hamburger {

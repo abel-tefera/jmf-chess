@@ -207,6 +207,7 @@ export const createFooter = (showPartner, createFooter, bg) => {
   if (showPartner) {
     const partnerSection = document.querySelector('.partner');
     const partnerDiv = document.createElement('div');
+    partnerDiv.classList.add('partner-div');
     partnerDiv.innerHTML = `<partner-footer class="container-md 
     d-flex flex-column"></partner-footer>`;
     partnerSection.appendChild(partnerDiv);

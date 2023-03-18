@@ -221,12 +221,13 @@ const main = () => {
     const programItem = document.createElement('div');
     programItem.classList.add(
         'col-11',
-        'col-md-4',
+        'col-md-3',
         'col-lg-2',
         'content-card',
         'align-self-center',
         'p-3',
-        'my-3',
+        'my-1',
+        'my-md-3',
     );
     programItem.innerHTML = `<program-card
     i='${i}'

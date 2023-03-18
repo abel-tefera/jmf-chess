@@ -29,7 +29,11 @@ window.onresize = () => {
     isScreenCurrentlySmall = true;
   } else if (!isSmallScreen() && isScreenCurrentlySmall) {
     createHeader(null, true);
-    partnerContainer.innerHTML = '';
+    // partnerContainer.innerHTML = '';
+    const partnerDiv = document.querySelector('.partner-div');
+    if (partnerDiv) {
+      partnerDiv.remove();
+    }
     const mainFooter = document.querySelector('.main-footer');
     if (mainFooter) {
       mainFooter.classList.add('footer-dark', 'text-white');
