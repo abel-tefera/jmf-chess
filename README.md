@@ -87,7 +87,7 @@
 
 > Here's the link to my project: 
 
- - [JMF Chess Tournament](https://abel-tefera.github.io/html-css-capstone/)
+ - [JMF Chess Tournament](https://abel-tefera.github.io/jmf-chess/)
 
  ## Video Presentation <a name="video-presentation"></a>
  Click on this [Loom Video](https://www.loom.com/share/e4d0c283b6684e4e8f596ea5a82bf026) to view the video walkthrough of this project
